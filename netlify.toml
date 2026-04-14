@@ -1,0 +1,17 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/documents/bylaws"
+  to = "/documents/bylaws/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/documents/covenants"
+  to = "/documents/covenants/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/documents/articles"
+  to = "/documents/articles/index.html"
+  status = 200
