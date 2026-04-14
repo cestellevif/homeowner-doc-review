@@ -1,6 +1,6 @@
 /* Speech bubble button */
 .feedback-btn {
-  opacity: 0.25;
+  opacity: 0.45;
   transition: opacity 0.2s ease;
   cursor: pointer;
 }
