@@ -15,8 +15,26 @@
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 50;
-  align-items: flex-end;
+  justify-content: flex-end;
 }
 .modal-backdrop.open {
   display: flex;
+}
+
+/* Modal panel — right-anchored side sheet */
+.modal-panel {
+  width: 420px;
+  max-width: 100vw;
+  height: 100%;
+  background: white;
+  border-radius: 1rem 0 0 1rem;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.modal-panel iframe {
+  flex: 1;
+  min-height: 0;
+  border-radius: 0 0 0 1rem;
 }
