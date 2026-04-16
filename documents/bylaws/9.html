@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bylaws — Article IX: Books and Records · Review Committee</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <header class="bg-slate-800 text-white px-8 py-4">
+    <nav class="text-sm text-slate-300 space-x-2" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-white">Home</a>
+      <span aria-hidden="true">/</span>
+      <a href="/documents/" class="hover:text-white">Documents</a>
+      <span aria-hidden="true">/</span>
+      <a href="/documents/bylaws/" class="hover:text-white">Bylaws</a>
+      <span aria-hidden="true">/</span>
+      <span class="text-white">Article IX</span>
+    </nav>
+    <h1 class="text-xl font-bold mt-1">Article IX — Books and Records</h1>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 py-10 space-y-10">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+      <div class="bg-white p-6 relative border-r border-gray-200">
+        <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Article IX — Books and Records</p>
+        <p class="text-gray-800 leading-relaxed">
+          The corporation shall keep correct and complete books and records of account and shall keep minutes of the proceedings of its Board of Directors; and shall keep at its registered office or principal place of business, or at the office of its transfer agent or registrar, a record of its directors, giving the names and addresses of all directors.
+        </p>
+        <button
+          class="feedback-btn absolute top-4 right-4 text-teal-500"
+          title="Leave feedback on this article"
+          onclick="openModal('Bylaws', 'Article IX')"
+          aria-label="Leave feedback on Article IX"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 2H4a2 2 0 00-2 2v12a2 2 0 002 2h14l4 4V4a2 2 0 00-2-2z"/>
+          </svg>
+        </button>
+      </div>
+      <div class="bg-slate-50 p-6">
+        <p class="text-xs font-semibold text-teal-600 uppercase tracking-wide mb-2">Committee Notes</p>
+        <p class="text-gray-700 leading-relaxed">🔴 Fix needed. Article IX states only that records "shall be kept" — it does not enumerate what categories of records are covered, does not grant members any inspection right, and sets no response timelines. Under RCW 64.90.475, associations must acknowledge inspection requests within 10 business days and complete production within 21 business days. This is members' primary oversight mechanism and the current language provides none of it. Suggested expansion: "The corporation shall keep correct and complete books and records of account, minutes of Board and member meetings, and a current roster of members with mailing and email addresses. Members shall have the right to inspect and copy the following records upon written request: governing documents, meeting minutes, annual financial reports, reserve studies, contracts, and any other records required by RCW 64.90.475. The Secretary shall acknowledge any inspection request within ten (10) business days and produce responsive records within twenty-one (21) business days, consistent with RCW 64.90.475. Reasonable copying costs may be charged."</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="max-w-6xl mx-auto px-6 py-8 flex justify-between items-center border-t border-gray-200 mt-4">
+    <a href="/documents/bylaws/8.html" class="text-teal-600 hover:underline text-sm">← Article VIII</a>
+    <a href="/documents/" class="text-gray-500 hover:text-gray-700 text-sm">All Documents</a>
+    <a href="/documents/bylaws/10.html" class="text-teal-600 hover:underline text-sm">Next: Article X →</a>
+  </footer>
+
+  <!-- Feedback Modal -->
+  <div id="feedback-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-label="Leave feedback">
+    <div class="bg-white rounded-lg shadow-xl w-full max-w-2xl mx-4 relative">
+      <button
+        id="feedback-modal-close"
+        onclick="closeModal()"
+        class="absolute top-3 right-4 text-gray-400 hover:text-gray-700 text-2xl font-bold leading-none"
+        aria-label="Close feedback form"
+      >&times;</button>
+      <iframe id="feedback-iframe" src="" width="100%" height="520" frameborder="0" class="rounded-lg" title="Feedback form"></iframe>
+    </div>
+  </div>
+  <script src="/js/modal.js"></script>
+
+</body>
+</html>

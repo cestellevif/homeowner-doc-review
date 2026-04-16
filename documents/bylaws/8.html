@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bylaws — Article VIII: Indemnification · Review Committee</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <header class="bg-slate-800 text-white px-8 py-4">
+    <nav class="text-sm text-slate-300 space-x-2" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-white">Home</a>
+      <span aria-hidden="true">/</span>
+      <a href="/documents/" class="hover:text-white">Documents</a>
+      <span aria-hidden="true">/</span>
+      <a href="/documents/bylaws/" class="hover:text-white">Bylaws</a>
+      <span aria-hidden="true">/</span>
+      <span class="text-white">Article VIII</span>
+    </nav>
+    <h1 class="text-xl font-bold mt-1">Article VIII — Indemnification of Officers, Directors, Employees, and Agents</h1>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 py-10 space-y-10">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+      <div class="bg-white p-6 relative border-r border-gray-200">
+        <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Article VIII — Indemnification</p>
+        <p class="text-gray-800 leading-relaxed">
+          The corporation shall indemnify its officers, directors, employees, and agents to the greatest extent permitted by law. The corporation shall have power to purchase and maintain insurance on behalf of any person who is or was a director, officer, employee, or agent of the corporation.
+        </p>
+        <button
+          class="feedback-btn absolute top-4 right-4 text-teal-500"
+          title="Leave feedback on this article"
+          onclick="openModal('Bylaws', 'Article VIII')"
+          aria-label="Leave feedback on Article VIII"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 2H4a2 2 0 00-2 2v12a2 2 0 002 2h14l4 4V4a2 2 0 00-2-2z"/>
+          </svg>
+        </button>
+      </div>
+      <div class="bg-slate-50 p-6">
+        <p class="text-xs font-semibold text-teal-600 uppercase tracking-wide mb-2">Committee Notes</p>
+        <p class="text-gray-700 leading-relaxed">⚠️ Flag. "To the greatest extent permitted by law" is standard indemnification language, but this article does not exclude indemnification for bad-faith conduct, intentional misconduct, or self-dealing — exclusions that RCW 24.03A.465 itself imposes. Without an explicit carve-out, the bylaws create a false impression that the association must cover all conduct, which could expose association funds to claims the law would not support. There is also no process for evaluating an indemnification claim before payment. Suggested addition: "Notwithstanding the foregoing, the association shall not indemnify any officer, director, employee, or agent for conduct that constitutes intentional misconduct, a knowing violation of law, participation in a transaction from which the person derives personal benefit in violation of RCW 24.03A.460, or conduct not in good faith. Any indemnification claim shall be reviewed by disinterested directors or legal counsel prior to payment."</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="max-w-6xl mx-auto px-6 py-8 flex justify-between items-center border-t border-gray-200 mt-4">
+    <a href="/documents/bylaws/7.html" class="text-teal-600 hover:underline text-sm">← Article VII</a>
+    <a href="/documents/" class="text-gray-500 hover:text-gray-700 text-sm">All Documents</a>
+    <a href="/documents/bylaws/9.html" class="text-teal-600 hover:underline text-sm">Next: Article IX →</a>
+  </footer>
+
+  <!-- Feedback Modal -->
+  <div id="feedback-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-label="Leave feedback">
+    <div class="bg-white rounded-lg shadow-xl w-full max-w-2xl mx-4 relative">
+      <button
+        id="feedback-modal-close"
+        onclick="closeModal()"
+        class="absolute top-3 right-4 text-gray-400 hover:text-gray-700 text-2xl font-bold leading-none"
+        aria-label="Close feedback form"
+      >&times;</button>
+      <iframe id="feedback-iframe" src="" width="100%" height="520" frameborder="0" class="rounded-lg" title="Feedback form"></iframe>
+    </div>
+  </div>
+  <script src="/js/modal.js"></script>
+
+</body>
+</html>
