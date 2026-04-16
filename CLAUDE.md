@@ -98,9 +98,10 @@ To get your `entry.XXXXXX` IDs: open the form → three-dot menu → "Get pre-fi
 
 ## Deployment
 
-Hosted on Netlify. To deploy:
-- **Manual:** Drag project folder to netlify.com → "Deploy manually"
-- **Auto:** Connect GitHub repo, publish directory = `.`, no build command
+Hosted on GitHub Pages. To deploy:
+- Push to the `main` branch, then go to **Settings → Pages** and set source to `main` branch, root directory (`/`).
+- The site will be served at `https://<username>.github.io/<repo-name>/`
+- All paths use relative URLs so they work correctly under the GitHub Pages subpath.
 
 ## Implementation Status
 
