@@ -1,3 +1,21 @@
+/* Header email signup button */
+#email-signup-btn {
+  flex-shrink: 0;
+  background-color: #14b8a6; /* teal-500 */
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+#email-signup-btn:hover {
+  background-color: #0d9488; /* teal-600 */
+}
+
 /* Speech bubble button */
 .feedback-btn {
   opacity: 0.45;
@@ -37,4 +55,36 @@
   flex: 1;
   min-height: 0;
   border-radius: 0 0 0 1rem;
+}
+
+/* Email signup modal — centered dialog */
+.email-modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 50;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.email-modal-backdrop.open {
+  display: flex;
+}
+.email-modal-panel {
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  position: relative;
+  width: 100%;
+  max-width: 660px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.email-modal-panel iframe {
+  flex: 1;
+  min-height: 500px;
+  border: none;
 }
