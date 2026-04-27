@@ -10,6 +10,41 @@
 
   <div id="kaiser-page">
 
+    <!-- Full-page trail SVG — sits behind all content -->
+    <svg id="trail-svg"
+         viewBox="0 0 1440 6000"
+         preserveAspectRatio="xMidYMid slice"
+         xmlns="http://www.w3.org/2000/svg"
+         aria-hidden="true">
+
+      <!-- Trail fill (light olive grass shape) -->
+      <path id="trail-fill"
+        d="M 400,0
+           C 400,400 900,600 800,1200
+           C 700,1800 200,2000 300,2600
+           C 400,3200 1000,3400 900,4000
+           C 800,4600 300,4800 400,5400
+           C 450,5700 600,5900 700,6000
+           L 1440,6000 L 1440,0 Z"
+        fill="var(--trail)"
+        opacity="0.45"
+      />
+
+      <!-- Trail path line (draws itself on scroll) -->
+      <path id="trail-line"
+        d="M 600,0
+           C 600,400 900,600 800,1200
+           C 700,1800 200,2000 300,2600
+           C 400,3200 1000,3400 900,4000
+           C 800,4600 300,4800 400,5400
+           C 450,5700 650,5900 720,6000"
+        fill="none"
+        stroke="var(--trail-dark)"
+        stroke-width="6"
+        stroke-linecap="round"
+      />
+    </svg>
+
     <!-- ===================== HERO ===================== -->
     <section id="hero">
       <p class="hero__eyebrow">Walk with me and let's talk about</p>
