@@ -70,10 +70,6 @@ body {
 .chapter {
   position: relative;
   z-index: 1;
-}
-
-/* ---- Chapter layout ---- */
-.chapter {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -89,7 +85,6 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.12em;
   margin-bottom: 2rem;
-  opacity: 0;
 }
 
 .chapter__main {
@@ -101,7 +96,6 @@ body {
   font-size: clamp(1.1rem, 2.2vw, 1.5rem);
   line-height: 1.6;
   margin-bottom: 1.2rem;
-  opacity: 0;
 }
 
 .chapter__heading {
@@ -109,7 +103,6 @@ body {
   font-weight: 700;
   line-height: 1.15;
   margin-bottom: 1.5rem;
-  opacity: 0;
 }
 
 .chapter__source {
@@ -117,7 +110,6 @@ body {
   font-size: clamp(1rem, 1.8vw, 1.3rem);
   color: var(--text-faint);
   margin-top: 0.5rem;
-  opacity: 0;
 }
 
 .chapter__accent {
@@ -132,7 +124,7 @@ body {
   max-width: 45vw;
   font-size: clamp(1rem, 1.8vw, 1.4rem);
   color: var(--text);
-  opacity: 0;
+  opacity: 0.18;
   font-weight: 700;
   pointer-events: none;
   line-height: 1.3;
