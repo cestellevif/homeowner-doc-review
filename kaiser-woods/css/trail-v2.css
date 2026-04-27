@@ -3,11 +3,11 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --text-dark:  #3a3a28;
+  --bg:         #d8d4ba;
+  --text:       #3a3a28;
   --text-mid:   #6a6a50;
-  --text-light: #f2efe4;
+  --olive:      #5c6b30;
   --accent:     #cc2200;
-  --accent-lt:  #ff9980;
   --sidebar-w:  52px;
 }
 
@@ -15,8 +15,8 @@ html, body {
   width: 100%;
   overflow-x: hidden;
   font-family: 'Libre Baskerville', serif;
-  color: var(--text-dark);
-  background: #2a3a26;
+  color: var(--text);
+  background: var(--bg);
 }
 
 #scroll-proxy {
@@ -41,7 +41,6 @@ html, body {
   width: var(--sidebar-w);
   z-index: 200;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   pointer-events: none;
@@ -51,8 +50,8 @@ html, body {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.10);
-  backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(2px);
 }
 
 #sidebar-label {
@@ -63,20 +62,36 @@ html, body {
   font-size: 0.95rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--text-dark);
-  opacity: 0.65;
+  color: var(--text-mid);
+  opacity: 0.75;
   position: relative;
   z-index: 1;
-  transition: color 0.4s ease, opacity 0.4s ease;
   white-space: nowrap;
-  max-height: 70vh;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
-#sidebar.sidebar--light #sidebar-label {
-  color: var(--text-light);
-  opacity: 0.7;
+/* ---- Pinned Simmons name ---- */
+#simmons-pin {
+  position: fixed;
+  top: 7vh;
+  left: calc(var(--sidebar-w) + 5vw);
+  z-index: 150;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  max-width: 800px;
+}
+
+.simmons-pin-name {
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--olive);
+}
+
+.simmons-pin-role {
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  color: var(--text-mid);
+  margin-top: 0.35rem;
 }
 
 /* ---- Panels wrapper ---- */
@@ -91,17 +106,22 @@ html, body {
   position: absolute;
   width: 100vw;
   height: 100vh;
+  background: var(--bg);
   display: flex;
   align-items: center;
   padding: 8vh 8vw 8vh calc(var(--sidebar-w) + 5vw);
   overflow: hidden;
 }
 
+/* Simmons quote panels: content sits lower to make room for the pinned name */
+.panel--quote-under-pin {
+  align-items: flex-start;
+  padding-top: 32vh;
+}
+
 .panel__content {
-  max-width: 860px;
+  max-width: 840px;
   width: 100%;
-  position: relative;
-  z-index: 2;
 }
 
 /* ---- Typography ---- */
@@ -109,7 +129,7 @@ html, body {
 .p-eyebrow {
   font-family: 'Caveat', cursive;
   font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-  color: rgba(242, 239, 228, 0.65);
+  color: var(--text-mid);
   margin-bottom: 0.5rem;
   line-height: 1.3;
 }
@@ -118,14 +138,15 @@ html, body {
   font-size: clamp(3.5rem, 9vw, 8rem);
   font-weight: 700;
   line-height: 1;
-  color: var(--text-light);
+  color: var(--olive);
   margin-bottom: 1.5rem;
 }
 
 .p-sub {
   font-family: 'Caveat', cursive;
   font-size: clamp(1.4rem, 3vw, 2rem);
-  color: rgba(242, 239, 228, 0.55);
+  color: var(--text-mid);
+  opacity: 0.8;
 }
 
 .p-date {
@@ -133,48 +154,45 @@ html, body {
   font-size: clamp(0.9rem, 1.5vw, 1.1rem);
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  color: var(--text-mid);
   margin-bottom: 1rem;
-  opacity: 0.55;
+  opacity: 0.65;
 }
-
-.p-date--dark  { color: var(--text-dark); }
-.p-date--light { color: var(--text-light); }
 
 .p-heading {
   font-size: clamp(2rem, 4.5vw, 4rem);
   font-weight: 700;
   line-height: 1.1;
+  color: var(--text);
   margin-bottom: 1.2rem;
 }
 
 .p-heading--xl {
   font-size: clamp(3rem, 7vw, 6.5rem);
   line-height: 1.0;
+  color: var(--text);
+  margin-bottom: 0.8rem;
 }
 
-.p-heading--dark  { color: var(--text-dark); }
-.p-heading--light { color: var(--text-light); }
+.p-heading--olive { color: var(--olive); }
+.p-heading--accent { color: var(--accent); }
 
 .p-body {
   font-size: clamp(1rem, 1.75vw, 1.28rem);
   line-height: 1.7;
+  color: var(--text);
   margin-bottom: 0.9rem;
 }
-
-.p-body--dark  { color: var(--text-dark); }
-.p-body--light { color: var(--text-light); opacity: 0.9; }
 
 .p-quote {
   font-size: clamp(0.95rem, 1.65vw, 1.22rem);
   line-height: 1.78;
-  border-left: 3px solid currentColor;
+  color: var(--text);
+  border-left: 3px solid var(--olive);
   padding-left: 1.4rem;
   margin-bottom: 1rem;
   opacity: 0.92;
 }
-
-.p-quote--dark  { color: var(--text-dark); }
-.p-quote--light { color: var(--text-light); }
 
 .p-annotation {
   font-family: 'Caveat', cursive;
@@ -185,50 +203,46 @@ html, body {
   line-height: 1.2;
 }
 
-.p-annotation--light {
-  color: var(--accent-lt);
-}
-
 .p-source {
   font-family: 'Caveat', cursive;
   font-size: clamp(1rem, 1.8vw, 1.4rem);
+  color: var(--text-mid);
   margin-top: 0.6rem;
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
-.p-source--dark  { color: var(--text-dark); }
-.p-source--light { color: var(--text-light); }
+.p-accent  { color: var(--accent); font-weight: 700; }
+.p-olive   { color: var(--olive);  font-weight: 700; }
 
-.p-accent       { color: var(--accent); font-weight: 700; }
-.p-accent--lt   { color: var(--accent-lt); font-weight: 700; }
-
+/* Speaker intro */
 .p-speaker-name {
   font-size: clamp(2.5rem, 6vw, 5.5rem);
   font-weight: 700;
   line-height: 1.05;
-  color: var(--text-light);
+  color: var(--olive);
   margin-bottom: 0.6rem;
 }
 
 .p-speaker-role {
   font-size: clamp(1rem, 2vw, 1.4rem);
-  color: rgba(242, 239, 228, 0.65);
+  color: var(--text-mid);
   line-height: 1.5;
 }
 
+/* Document excerpt box */
 .p-doc {
   font-family: 'Georgia', serif;
   font-size: clamp(0.82rem, 1.25vw, 0.96rem);
   line-height: 1.7;
   color: #2a2a18;
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.75);
   border: 1px solid rgba(0, 0, 0, 0.14);
   padding: 1.1rem 1.5rem;
   max-width: 680px;
   margin-bottom: 1.2rem;
 }
 
-/* Park panel layout */
+/* Park map layout */
 .p-park-layout {
   display: flex;
   align-items: center;
@@ -256,11 +270,10 @@ html, body {
 .p-link {
   display: inline-block;
   margin-top: 1.5rem;
-  color: var(--text-light);
+  color: var(--olive);
   text-decoration: underline;
   font-weight: 700;
   font-size: clamp(1rem, 1.8vw, 1.3rem);
-  opacity: 0.85;
 }
 
-.p-link:hover { opacity: 1; }
+.p-link:hover { color: var(--text); }
