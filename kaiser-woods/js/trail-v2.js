@@ -92,7 +92,9 @@ function buildScene(tl, def) {
     tl.to({}, { duration: def.holdDuration });
 
   } else if (def.type === 'sequential') {
-    // Each item enters; previous item recedes to left when next arrives
+    // Each item enters; previous item recedes to left when next arrives.
+    // Note: annotations are not animated in sequential scenes (s-simmons has none).
+    // If annotations are ever added to a sequential scene, they will remain hidden.
     items.forEach((item, i) => {
       animateApproach(tl, item, '>');
       tl.to({}, { duration: def.holdDuration }); // hold this item
@@ -121,7 +123,7 @@ function buildScene(tl, def) {
         { x: '35vw', scale: 0.12, opacity: 0.2, duration: 0.4 },
         '<' // starts when hold starts
       );
-      tl.set(ghostEl, { opacity: 0, x: '38vw' }, '>-0.1');
+      tl.set(ghostEl, { opacity: 0, x: '38vw', scale: 1 }, '>-0.1');
     }
   }
 
