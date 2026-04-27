@@ -92,7 +92,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // ---- Progress dot ----
   const dot = document.getElementById('progress-dot');
-  const trackHeight = 112; // 120px track minus dot size
+  const trackHeight = 112; // distance between line endpoints: y2(116) - y1(4) = 112
 
   ScrollTrigger.create({
     trigger: pageEl,

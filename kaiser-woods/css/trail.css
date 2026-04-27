@@ -142,6 +142,12 @@ body {
 }
 
 /* ---- Progress indicator ---- */
+#progress-indicator svg line {
+  stroke: var(--trail);
+  stroke-width: 2;
+  stroke-dasharray: 4 4;
+}
+
 #progress-indicator {
   position: fixed;
   left: 24px;
