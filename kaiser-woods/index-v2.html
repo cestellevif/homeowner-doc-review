@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="A walk through the Kaiser Woods Trail access story — scroll to stroll." />
   <title>Kaiser Woods Trail</title>
+  <script>
+    // Redirect mobile portrait users to the vertical scroll version
+    if (window.innerWidth < 768 && window.innerHeight > window.innerWidth) {
+      window.location.replace('index.html');
+    }
+  </script>
   <link rel="stylesheet" href="css/trail-v2.css" />
 </head>
 <body>

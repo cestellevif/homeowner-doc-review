@@ -221,5 +221,14 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="js/trail.js"></script>
+  <script>
+    // Offer desktop users the walking version
+    if (window.innerWidth >= 768) {
+      const banner = document.createElement('div');
+      banner.style.cssText = 'position:fixed;bottom:1rem;right:1rem;background:#5c6b30;color:#e8e8d0;padding:0.75rem 1.25rem;border-radius:4px;font-family:serif;font-size:0.9rem;z-index:999;';
+      banner.innerHTML = '<a href="index-v2.html" style="color:#e8e8d0;text-decoration:none;">Try the walking version &rarr;</a> <span onclick="this.parentNode.remove()" style="cursor:pointer;margin-left:1rem;opacity:0.6;">✕</span>';
+      document.body.appendChild(banner);
+    }
+  </script>
 </body>
 </html>
