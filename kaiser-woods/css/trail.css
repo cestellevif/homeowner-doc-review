@@ -66,8 +66,74 @@ body {
   z-index: 0;
 }
 
-/* All sections sit above the trail */
-section {
+/* All chapters sit above the trail */
+.chapter {
   position: relative;
   z-index: 1;
+}
+
+/* ---- Chapter layout ---- */
+.chapter {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5vh 8vw;
+  overflow: visible;
+}
+
+.chapter__label {
+  font-family: 'Caveat', cursive;
+  font-size: clamp(1rem, 1.8vw, 1.4rem);
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 2rem;
+  opacity: 0;
+}
+
+.chapter__main {
+  max-width: 680px;
+}
+
+.chapter__main p,
+.chapter__main blockquote {
+  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+  opacity: 0;
+}
+
+.chapter__heading {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+}
+
+.chapter__source {
+  font-family: 'Caveat', cursive;
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  color: var(--text-faint);
+  margin-top: 0.5rem;
+  opacity: 0;
+}
+
+.chapter__accent {
+  color: var(--accent);
+}
+
+/* ---- Peek-ahead text ---- */
+.chapter__peek {
+  position: absolute;
+  right: -5vw;
+  bottom: 12vh;
+  max-width: 45vw;
+  font-size: clamp(1rem, 1.8vw, 1.4rem);
+  color: var(--text);
+  opacity: 0;
+  font-weight: 700;
+  pointer-events: none;
+  line-height: 1.3;
 }

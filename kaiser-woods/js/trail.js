@@ -23,4 +23,31 @@ window.addEventListener('DOMContentLoaded', () => {
       scrub: 1,
     },
   });
+
+  // ---- Chapter pin + reveal system ----
+  function initChapter(el) {
+    const pinDuration = parseInt(el.dataset.pin || '600');
+    const revealEls = el.querySelectorAll('.reveal');
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: el,
+        start: 'top top',
+        end: '+=' + pinDuration,
+        pin: true,
+        scrub: false,
+        anticipatePin: 1,
+      },
+    });
+
+    tl.from(revealEls, {
+      opacity: 0,
+      y: 35,
+      duration: 0.7,
+      stagger: 0.25,
+      ease: 'power2.out',
+    });
+  }
+
+  gsap.utils.toArray('.chapter').forEach(initChapter);
 });
