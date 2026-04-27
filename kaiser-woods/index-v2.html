@@ -21,23 +21,12 @@
   <!-- Fixed viewport stage — all scenes live here -->
   <div id="stage">
 
-    <!-- Trail ground (Task 2) -->
-    <div id="trail-ground" aria-hidden="true">
-      <svg viewBox="0 0 1440 1200" preserveAspectRatio="xMidYMid slice"
-           xmlns="http://www.w3.org/2000/svg">
-        <!-- Trail fill shape -->
-        <path id="trail-ground-fill"
-          d="M 500,0
-             C 500,200 900,300 800,600
-             C 700,900 200,1000 400,1200
-             L 1440,1200 L 1440,0 Z" />
-        <!-- Trail center line -->
-        <path id="trail-ground-line"
-          d="M 650,0
-             C 650,200 900,300 800,600
-             C 700,900 300,1000 500,1200" />
-      </svg>
-    </div>
+    <!-- Trail path: draws from lower-left to upper-right as user scrolls -->
+    <svg id="trail-line-svg" viewBox="0 0 100 100" preserveAspectRatio="none"
+         aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <path id="trail-path"
+        d="M 8,96 C 16,82 22,72 32,62 C 44,50 54,43 62,34 C 72,23 80,16 88,8 S 94,4 96,2" />
+    </svg>
 
     <!-- Scenes (Task 3) -->
 
@@ -65,10 +54,14 @@
     <div class="scene" id="s-park">
       <div class="scene__label">Marj Young Park</div>
       <div class="scene__items">
-        <h2 class="scene__item scene__item--heading">Now the Marj Young Park,</h2>
-        <p class="scene__item">The City of Olympia plans to develop biking and hiking trails for citizens on 70 acres of woodland.</p>
-        <div class="scene__item">
-          <img src="../docs/KaiserWoods/5.jpg" alt="Official Kaiser Woods / Marj Young Park map, City of Olympia" />
+        <div class="scene__item scene__item--park-row">
+          <div class="park-img-col">
+            <img src="../docs/KaiserWoods/5.jpg" alt="Official Kaiser Woods / Marj Young Park map, City of Olympia" />
+          </div>
+          <div class="park-text-col">
+            <h2 class="park-heading">Now the Marj Young Park,</h2>
+            <p class="park-body">The City of Olympia plans to develop biking and hiking trails for citizens on 70 acres of woodland.</p>
+          </div>
         </div>
       </div>
     </div>

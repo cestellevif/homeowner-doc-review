@@ -22,11 +22,11 @@ const SCENE_DEFS = [
   { id: 's-cta',        type: 'build',       holdDuration: 0.6 },
 ];
 
-// ---- Approach animation: item enters from right-small → reading position ----
+// ---- Approach animation: item enters from upper-right (distance) → reading position ----
 function animateApproach(tl, el, position) {
   tl.fromTo(el,
-    { x: '38vw', scale: 0.18, opacity: 0.6, transformOrigin: 'center center' },
-    { x: '0',    scale: 1,    opacity: 1,   transformOrigin: 'center center',
+    { x: '40vw', y: '-10vh', scale: 0.2, opacity: 0.5, transformOrigin: 'center center' },
+    { x: '0',   y: '0',     scale: 1,   opacity: 1,   transformOrigin: 'center center',
       duration: 0.9, ease: 'power2.inOut' },
     position
   );
@@ -54,14 +54,10 @@ function buildScene(tl, def) {
   }
 
   if (def.type === 'hero') {
-    items.forEach((item, i) => {
-      tl.fromTo(item,
-        { x: '38vw', scale: 0.18, opacity: 0.6, transformOrigin: 'center center' },
-        { x: '0',    scale: 1,    opacity: 1,   transformOrigin: 'center center',
-          duration: 1.1, ease: 'expo.out' },
-        i === 0 ? '>' : '<0.2'
-      );
-    });
+    // Entry animation plays on load (outside timeline) — see DOMContentLoaded
+    // At timeline t=0, hero is pre-set to visible state
+    tl.set(el, { opacity: 1 });
+    tl.set(items, { opacity: 1, x: 0, scale: 1 });
     tl.to({}, { duration: def.holdDuration });
 
   } else if (def.type === 'build') {
@@ -151,7 +147,16 @@ function buildScene(tl, def) {
 // ---- Build master timeline + initialize ScrollTrigger ----
 window.addEventListener('DOMContentLoaded', () => {
   const proxy = document.getElementById('scroll-proxy');
-  const groundSvg = document.querySelector('#trail-ground svg');
+  // (groundSvg removed — replaced by trail-path stroke animation)
+
+  // Hero entry animation plays on load (not scroll-driven)
+  const heroEl = document.getElementById('s-hero');
+  gsap.set(heroEl, { opacity: 1 });
+  gsap.fromTo(
+    Array.from(heroEl.querySelectorAll('.scene__item')),
+    { x: '40vw', scale: 0.18, opacity: 0.5, transformOrigin: 'center center' },
+    { x: 0, scale: 1, opacity: 1, duration: 1.6, ease: 'expo.out', stagger: 0.25 }
+  );
 
   // Build master timeline
   const masterTl = gsap.timeline({ paused: true });
@@ -170,16 +175,21 @@ window.addEventListener('DOMContentLoaded', () => {
     scrub: 1.2,
   });
 
-  // Trail ground moves upward as user scrolls
-  ScrollTrigger.create({
-    trigger: document.body,
-    start: 'top top',
-    end: 'bottom bottom',
-    scrub: 1,
-    onUpdate: (self) => {
-      gsap.set(groundSvg, { y: `-${self.progress * 38}%` });
-    },
-  });
+  // Trail path draws from lower-left to upper-right as user scrolls
+  const trailPath = document.getElementById('trail-path');
+  if (trailPath) {
+    const pathLen = trailPath.getTotalLength();
+    gsap.set(trailPath, { strokeDasharray: pathLen, strokeDashoffset: pathLen });
+    ScrollTrigger.create({
+      trigger: document.body,
+      start: 'top top',
+      end: 'bottom bottom',
+      scrub: 1,
+      onUpdate: (self) => {
+        gsap.set(trailPath, { strokeDashoffset: pathLen * (1 - self.progress) });
+      },
+    });
+  }
 
   // Refresh after fonts load
   document.fonts.ready.then(() => ScrollTrigger.refresh());
