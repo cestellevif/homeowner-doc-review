@@ -22,12 +22,12 @@ const SCENE_DEFS = [
   { id: 's-cta',        type: 'build',       holdDuration: 0.6 },
 ];
 
-// ---- Approach: item floats from right-side staged position → reading position ----
+// ---- Approach: item floats forward at walking pace from right preview position ----
 function animateApproach(tl, el, position) {
   tl.fromTo(el,
-    { x: '52vw', y: '-5vh', scale: 0.46, opacity: 0.35, transformOrigin: 'center center' },
+    { x: '52vw', y: '-4vh', scale: 0.68, opacity: 0.35, transformOrigin: 'center center' },
     { x: '0',   y: '0',    scale: 1,    opacity: 1,    transformOrigin: 'center center',
-      duration: 1.2, ease: 'power2.out' },
+      duration: 1.5, ease: 'power1.out' },
     position
   );
 }
@@ -99,7 +99,7 @@ function buildScene(tl, def) {
       if (i < items.length - 1) {
         // Recede current item to left as next one comes in
         tl.to(item,
-          { x: '-12vw', scale: 0.75, opacity: 0.25, duration: 0.6, ease: 'power2.in' },
+          { x: 0, y: '2vh', scale: 0.94, opacity: 0.07, duration: 0.7, ease: 'power1.in' },
           '>'
         );
       }
@@ -169,8 +169,8 @@ window.addEventListener('DOMContentLoaded', () => {
   gsap.set(heroEl, { opacity: 1 });
   gsap.fromTo(
     Array.from(heroEl.querySelectorAll('.scene__item')),
-    { x: '95vw', y: '-12vh', scale: 0.28, opacity: 0, transformOrigin: 'center center' },
-    { x: 0, y: 0, scale: 1, opacity: 1, duration: 1.8, ease: 'expo.out', stagger: 0.3 }
+    { x: '90vw', y: '-10vh', scale: 0.5, opacity: 0, transformOrigin: 'center center' },
+    { x: 0, y: 0, scale: 1, opacity: 1, duration: 2.0, ease: 'power1.out', stagger: 0.35 }
   );
 
   // Build master timeline
@@ -201,8 +201,8 @@ window.addEventListener('DOMContentLoaded', () => {
     ScrollTrigger.create({
       trigger: document.body,
       start: 'top top',
-      end: 'bottom bottom',
-      scrub: 0.6,
+      end: '+=' + Math.round((proxyHeight - window.innerHeight) * 0.6),
+      scrub: 0.3,
       onUpdate: (self) => {
         gsap.set(trailPath, { strokeDashoffset: pathLen * (1 - self.progress) });
         if (trailPathBg) gsap.set(trailPathBg, { strokeDashoffset: pathLenBg * (1 - self.progress) });

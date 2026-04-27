@@ -229,21 +229,64 @@ html, body {
   color: var(--trail-dark);
 }
 
-/* ---- Simmons: left-aligned under label, readable size ---- */
+/* ---- Simmons: attribution left column, rotating quotes right column ---- */
 #s-simmons {
   justify-content: flex-start;
-  padding-top: 14vh;
+  padding-top: 13vh;
   align-items: flex-start;
 }
 
 #s-simmons .scene__items {
   margin-top: 0;
-  max-width: 680px;
   text-align: left;
 }
 
+.simmons-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2.5rem;
+  max-width: 920px;
+  width: 100%;
+}
+
+.simmons-attrib {
+  flex: 0 0 160px;
+  padding-top: 0.4rem;
+}
+
+.simmons-name {
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 700;
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  color: var(--trail-dark);
+  line-height: 1.2;
+  margin-bottom: 0.6rem;
+}
+
+.simmons-role {
+  font-family: 'Caveat', cursive;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: var(--text-faint);
+  line-height: 1.45;
+  margin-bottom: 0.4rem;
+}
+
+.simmons-org {
+  font-family: 'Caveat', cursive;
+  font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+  color: var(--text-faint);
+  font-style: italic;
+}
+
+.simmons-quotes {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+}
+
 #s-simmons .scene__item {
-  font-size: clamp(1rem, 1.7vw, 1.25rem);
-  line-height: 1.65;
-  margin-bottom: 0.8rem;
+  font-size: clamp(1.05rem, 1.7vw, 1.28rem);
+  line-height: 1.68;
+  margin-bottom: 0;
 }
