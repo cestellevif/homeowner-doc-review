@@ -89,4 +89,17 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Initialize chapters
   gsap.utils.toArray('.chapter').forEach(initChapter);
+
+  // ---- Progress dot ----
+  const dot = document.getElementById('progress-dot');
+  const trackHeight = 112; // 120px track minus dot size
+
+  ScrollTrigger.create({
+    trigger: pageEl,
+    start: 'top top',
+    end: 'bottom bottom',
+    onUpdate: (self) => {
+      gsap.set(dot, { top: 4 + self.progress * trackHeight });
+    },
+  });
 });
