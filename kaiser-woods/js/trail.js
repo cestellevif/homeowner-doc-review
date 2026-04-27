@@ -40,6 +40,17 @@ function initChapter(el) {
     ease: 'power2.out',
   });
 
+  // Annotations write in after main text
+  const annotations = el.querySelectorAll('.annotation');
+  if (annotations.length) {
+    tl.to(annotations, {
+      clipPath: 'inset(0 0% 0 0)',
+      duration: 0.9,
+      stagger: 0.2,
+      ease: 'power1.inOut',
+    }, '+=0.2');
+  }
+
   // Peek text: pulse when pinned, fade when leaving
   if (peek) {
     ScrollTrigger.create({
