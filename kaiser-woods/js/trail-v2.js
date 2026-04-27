@@ -22,12 +22,12 @@ const SCENE_DEFS = [
   { id: 's-cta',        type: 'build',       holdDuration: 0.6 },
 ];
 
-// ---- Approach animation: item enters from off-screen upper-right → reading position ----
+// ---- Approach: item floats from right-side staged position → reading position ----
 function animateApproach(tl, el, position) {
   tl.fromTo(el,
-    { x: '105vw', y: '-14vh', scale: 0.28, opacity: 0, transformOrigin: 'center center' },
-    { x: '0',    y: '0',     scale: 1,    opacity: 1, transformOrigin: 'center center',
-      duration: 1.3, ease: 'power2.out' },
+    { x: '52vw', y: '-5vh', scale: 0.46, opacity: 0.35, transformOrigin: 'center center' },
+    { x: '0',   y: '0',    scale: 1,    opacity: 1,    transformOrigin: 'center center',
+      duration: 1.2, ease: 'power2.out' },
     position
   );
 }
@@ -47,7 +47,7 @@ function buildScene(tl, def) {
   // Animate label in (if present)
   if (label) {
     tl.fromTo(label,
-      { x: '85vw', y: '-4vh', scale: 0.45, opacity: 0 },
+      { x: '52vw', y: '-2vh', scale: 0.45, opacity: 0.7 },
       { x: '0',   y: '0',    scale: 1,    opacity: 1,
         duration: 0.95, ease: 'power3.out' },
       '<'
@@ -106,21 +106,35 @@ function buildScene(tl, def) {
     });
   }
 
-  // During hold: show ghost of next scene in distance
+  // Stage next scene visibly on right side during hold phase
   const currentIdx = SCENE_DEFS.findIndex(d => d.id === def.id);
   const nextDef = SCENE_DEFS[currentIdx + 1];
   if (nextDef) {
     const nextEl = document.getElementById(nextDef.id);
-    const nextLabel = nextEl && nextEl.querySelector('.scene__label');
-    const nextFirstItem = nextEl && nextEl.querySelector('.scene__item');
-    const ghostEl = nextLabel || nextFirstItem;
-    if (ghostEl) {
-      tl.fromTo(ghostEl,
-        { x: '38vw', scale: 0.12, opacity: 0 },
-        { x: '35vw', scale: 0.12, opacity: 0.2, duration: 0.4 },
-        '<' // starts when hold starts
-      );
-      tl.set(ghostEl, { opacity: 0, x: '38vw', scale: 1 }, '>-0.1');
+    if (nextEl) {
+      const nextLabel = nextEl.querySelector('.scene__label');
+      const nextItems = Array.from(nextEl.querySelectorAll('.scene__item:not(.scene__item--annotation)'));
+
+      // Make next scene's container partially visible so children show
+      tl.to(nextEl, { opacity: 0.5, duration: 0.3 }, '<');
+
+      // Label slides in to staged right position
+      if (nextLabel) {
+        tl.fromTo(nextLabel,
+          { x: '90vw', y: '-4vh', scale: 0.45, opacity: 0 },
+          { x: '52vw', y: '-2vh', scale: 0.45, opacity: 0.7, duration: 0.5 },
+          '<+0.1'
+        );
+      }
+
+      // Stage first 2 items into right-side preview position
+      nextItems.slice(0, 2).forEach((item, i) => {
+        tl.fromTo(item,
+          { x: '95vw', y: '-12vh', scale: 0.28, opacity: 0 },
+          { x: `${52 + i * 7}vw`, y: `${-4 - i * 2}vh`, scale: 0.46, opacity: 0.4, duration: 0.5 },
+          `<+${0.12 + i * 0.12}`
+        );
+      });
     }
   }
 
@@ -155,7 +169,7 @@ window.addEventListener('DOMContentLoaded', () => {
   gsap.set(heroEl, { opacity: 1 });
   gsap.fromTo(
     Array.from(heroEl.querySelectorAll('.scene__item')),
-    { x: '105vw', y: '-14vh', scale: 0.28, opacity: 0, transformOrigin: 'center center' },
+    { x: '95vw', y: '-12vh', scale: 0.28, opacity: 0, transformOrigin: 'center center' },
     { x: 0, y: 0, scale: 1, opacity: 1, duration: 1.8, ease: 'expo.out', stagger: 0.3 }
   );
 
