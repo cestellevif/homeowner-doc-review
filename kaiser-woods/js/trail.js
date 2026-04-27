@@ -5,9 +5,8 @@ function initChapter(el) {
   const isMobile = window.innerWidth < 640;
   const pinDuration = (parseInt(el.dataset.pin || '1500') || 1500) * (isMobile ? 0.6 : 1);
   const revealEls = el.querySelectorAll('.reveal');
-  if (!revealEls.length) return;
-
-  const peek = el.querySelector('.chapter__peek');
+  // Note: early return skipped — GSAP handles empty arrays gracefully
+  const annotations = el.querySelectorAll('.annotation');
 
   const tl = gsap.timeline({
     scrollTrigger: {
@@ -17,42 +16,26 @@ function initChapter(el) {
       pin: true,
       scrub: false,
       anticipatePin: 1,
-      onEnter: () => {
-        // First .reveal element slides in from slightly right as chapter enters
-        const firstReveal = revealEls[0];
-        if (firstReveal) {
-          gsap.from(firstReveal, {
-            x: 60,
-            opacity: 0,
-            duration: 0.5,
-            ease: 'power2.out',
-            overwrite: true,
-          });
-        }
-      },
     },
   });
 
-  tl.from(revealEls, {
-    opacity: 0,
-    y: 35,
-    duration: 0.7,
-    stagger: 0.25,
-    ease: 'power2.out',
-  });
+  if (revealEls.length) {
+    tl.fromTo(revealEls,
+      { opacity: 0, y: 35, x: 15 },
+      { opacity: 1, y: 0, x: 0, duration: 0.7, stagger: 0.25, ease: 'power2.out' }
+    );
+  }
 
-  // Annotations write in after main text
-  const annotations = el.querySelectorAll('.annotation');
   if (annotations.length) {
     tl.to(annotations, {
       clipPath: 'inset(0 0% 0 0)',
       duration: 0.9,
       stagger: 0.2,
       ease: 'power1.inOut',
-    }, '+=0.2');
+    }, revealEls.length ? '+=0.2' : 0);
   }
 
-  // Peek text: pulse when pinned, fade when leaving
+  const peek = el.querySelector('.chapter__peek');
   if (peek) {
     ScrollTrigger.create({
       trigger: el,
@@ -103,4 +86,7 @@ window.addEventListener('DOMContentLoaded', () => {
       gsap.set(dot, { top: 4 + self.progress * trackHeight });
     },
   });
+
+  // Refresh after fonts load to ensure accurate scroll calculations
+  document.fonts.ready.then(() => ScrollTrigger.refresh());
 });

@@ -86,6 +86,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.12em;
   margin-bottom: 2rem;
+  opacity: 0;
 }
 
 .chapter__main {
@@ -97,6 +98,7 @@ body {
   font-size: clamp(1.1rem, 2.2vw, 1.5rem);
   line-height: 1.6;
   margin-bottom: 1.2rem;
+  opacity: 0;
 }
 
 .chapter__heading {
@@ -104,6 +106,7 @@ body {
   font-weight: 700;
   line-height: 1.15;
   margin-bottom: 1.5rem;
+  opacity: 0;
 }
 
 .chapter__source {
@@ -111,6 +114,7 @@ body {
   font-size: clamp(1rem, 1.8vw, 1.3rem);
   color: var(--text-faint);
   margin-top: 0.5rem;
+  opacity: 0;
 }
 
 .chapter__accent {
