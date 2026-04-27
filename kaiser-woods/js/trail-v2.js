@@ -22,12 +22,12 @@ const SCENE_DEFS = [
   { id: 's-cta',        type: 'build',       holdDuration: 0.6 },
 ];
 
-// ---- Approach animation: item enters from upper-right (distance) → reading position ----
+// ---- Approach animation: item enters from off-screen upper-right → reading position ----
 function animateApproach(tl, el, position) {
   tl.fromTo(el,
-    { x: '40vw', y: '-10vh', scale: 0.2, opacity: 0.5, transformOrigin: 'center center' },
-    { x: '0',   y: '0',     scale: 1,   opacity: 1,   transformOrigin: 'center center',
-      duration: 0.9, ease: 'power2.inOut' },
+    { x: '105vw', y: '-14vh', scale: 0.28, opacity: 0, transformOrigin: 'center center' },
+    { x: '0',    y: '0',     scale: 1,    opacity: 1, transformOrigin: 'center center',
+      duration: 1.3, ease: 'power2.out' },
     position
   );
 }
@@ -47,8 +47,9 @@ function buildScene(tl, def) {
   // Animate label in (if present)
   if (label) {
     tl.fromTo(label,
-      { x: '15vw', opacity: 0 },
-      { x: '0', opacity: 1, duration: 0.5, ease: 'power2.out' },
+      { x: '85vw', y: '-4vh', scale: 0.45, opacity: 0 },
+      { x: '0',   y: '0',    scale: 1,    opacity: 1,
+        duration: 0.95, ease: 'power3.out' },
       '<'
     );
   }
@@ -154,8 +155,8 @@ window.addEventListener('DOMContentLoaded', () => {
   gsap.set(heroEl, { opacity: 1 });
   gsap.fromTo(
     Array.from(heroEl.querySelectorAll('.scene__item')),
-    { x: '40vw', scale: 0.18, opacity: 0.5, transformOrigin: 'center center' },
-    { x: 0, scale: 1, opacity: 1, duration: 1.6, ease: 'expo.out', stagger: 0.25 }
+    { x: '105vw', y: '-14vh', scale: 0.28, opacity: 0, transformOrigin: 'center center' },
+    { x: 0, y: 0, scale: 1, opacity: 1, duration: 1.8, ease: 'expo.out', stagger: 0.3 }
   );
 
   // Build master timeline
@@ -177,16 +178,20 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Trail path draws from lower-left to upper-right as user scrolls
   const trailPath = document.getElementById('trail-path');
+  const trailPathBg = document.getElementById('trail-path-bg');
   if (trailPath) {
     const pathLen = trailPath.getTotalLength();
+    const pathLenBg = trailPathBg ? trailPathBg.getTotalLength() : pathLen;
     gsap.set(trailPath, { strokeDasharray: pathLen, strokeDashoffset: pathLen });
+    if (trailPathBg) gsap.set(trailPathBg, { strokeDasharray: pathLenBg, strokeDashoffset: pathLenBg });
     ScrollTrigger.create({
       trigger: document.body,
       start: 'top top',
       end: 'bottom bottom',
-      scrub: 1,
+      scrub: 0.6,
       onUpdate: (self) => {
         gsap.set(trailPath, { strokeDashoffset: pathLen * (1 - self.progress) });
+        if (trailPathBg) gsap.set(trailPathBg, { strokeDashoffset: pathLenBg * (1 - self.progress) });
       },
     });
   }

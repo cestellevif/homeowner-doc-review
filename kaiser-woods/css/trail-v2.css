@@ -50,7 +50,8 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 8vh 8vw;
+  align-items: center;
+  padding: 8vh 5vw;
   opacity: 0;           /* JS controls opacity */
   transform-style: preserve-3d;
   will-change: transform, opacity;
@@ -59,10 +60,10 @@ html, body {
 /* ---- Scene label (sticky heading) ---- */
 .scene__label {
   font-family: 'Caveat', cursive;
-  font-size: clamp(1rem, 1.8vw, 1.5rem);
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
   color: var(--text-faint);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   position: absolute;
   top: 7vh;
   left: 8vw;
@@ -72,7 +73,9 @@ html, body {
 /* ---- Scene items container ---- */
 .scene__items {
   max-width: 700px;
+  width: 100%;
   margin-top: 2rem;
+  text-align: left;
 }
 
 /* ---- Individual scene items ---- */
@@ -152,13 +155,22 @@ html, body {
   pointer-events: none;
 }
 
-#trail-path {
+#trail-path-bg {
   fill: none;
   stroke: var(--trail);
-  stroke-width: 1.5;
+  stroke-width: 36;
   stroke-linecap: round;
   stroke-linejoin: round;
-  opacity: 0.55;
+  opacity: 0.18;
+}
+
+#trail-path {
+  fill: none;
+  stroke: var(--trail-dark);
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.65;
 }
 
 /* Scenes sit above trail */
@@ -171,18 +183,23 @@ html, body {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 2.5rem;
-  max-width: 860px;
+  gap: 3rem;
+  max-width: 900px;
+  width: 100%;
 }
 
+/* Crop image to show only the map (left 38% of the full slide) */
 .park-img-col {
   flex: 0 0 260px;
+  overflow: hidden;
+  height: 320px;
 }
 
 .park-img-col img {
-  width: 100%;
+  width: 680px;          /* show ~38% of the 1440px slide width */
   max-width: none;
-  border: 1px solid #ccc;
+  margin-left: -10px;    /* hide thin border */
+  margin-top: -15px;     /* hide thin border */
   display: block;
 }
 
@@ -191,20 +208,27 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 0.6rem;
 }
 
 .park-heading {
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1rem;
+  line-height: 1.15;
   color: var(--text);
+  margin-bottom: 0.4rem;
 }
 
 .park-body {
-  font-size: clamp(1rem, 1.8vw, 1.3rem);
-  line-height: 1.65;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  line-height: 1.5;
   color: var(--text);
+  margin: 0;
+}
+
+.park-body--emphasis {
+  font-weight: 700;
+  color: var(--trail-dark);
 }
 
 /* ---- Simmons: smaller font so long quotes fit in viewport ---- */

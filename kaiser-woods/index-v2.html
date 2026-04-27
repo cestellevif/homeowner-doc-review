@@ -21,11 +21,13 @@
   <!-- Fixed viewport stage — all scenes live here -->
   <div id="stage">
 
-    <!-- Trail path: draws from lower-left to upper-right as user scrolls -->
-    <svg id="trail-line-svg" viewBox="0 0 100 100" preserveAspectRatio="none"
+    <!-- Trail path: draws lower-left to upper-right as user scrolls -->
+    <svg id="trail-line-svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice"
          aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <path id="trail-path-bg"
+        d="M 200,980 C 60,860 580,790 320,650 C 60,510 580,440 340,300 C 100,160 660,110 880,40" />
       <path id="trail-path"
-        d="M 8,96 C 16,82 22,72 32,62 C 44,50 54,43 62,34 C 72,23 80,16 88,8 S 94,4 96,2" />
+        d="M 200,980 C 60,860 580,790 320,650 C 60,510 580,440 340,300 C 100,160 660,110 880,40" />
     </svg>
 
     <!-- Scenes (Task 3) -->
@@ -56,11 +58,12 @@
       <div class="scene__items">
         <div class="scene__item scene__item--park-row">
           <div class="park-img-col">
-            <img src="../docs/KaiserWoods/5.jpg" alt="Official Kaiser Woods / Marj Young Park map, City of Olympia" />
+            <img src="../docs/KaiserWoods/5.jpg" alt="Kaiser Woods / Marj Young Park trail map, City of Olympia" />
           </div>
           <div class="park-text-col">
-            <h2 class="park-heading">Now the Marj Young Park,</h2>
-            <p class="park-body">The City of Olympia plans to develop biking and hiking trails for citizens on 70 acres of woodland.</p>
+            <h2 class="park-heading">Now the<br>Marj Young Park,</h2>
+            <p class="park-body">The City of Olympia plans to develop biking and hiking trails for citizens</p>
+            <p class="park-body park-body--emphasis">on 70 acres of woodland.</p>
           </div>
         </div>
       </div>
