@@ -61,23 +61,31 @@ function buildScene(tl, def) {
     tl.to({}, { duration: def.holdDuration }); // hold
 
   } else if (def.type === 'build') {
-    // Items enter one by one, all stay visible
-    items.forEach((item, i) => {
-      animateApproach(tl, item, '>');
-      tl.to({}, { duration: 0.15 }); // brief breath between items
+    // Process all scene__item children in DOM order (annotations interleaved with items)
+    const allItems = Array.from(el.querySelectorAll('.scene__items .scene__item'));
+    // Deduplicate (in case of nested selectors)
+    const seen = new Set();
+    const ordered = allItems.filter(item => {
+      if (seen.has(item)) return false;
+      seen.add(item);
+      return true;
     });
 
-    // Weave annotations in after their preceding item
-    annotations.forEach(ann => {
-      tl.fromTo(ann,
-        { clipPath: 'inset(0 100% 0 0)', opacity: 1 },
-        { clipPath: 'inset(0 0% 0 0)', duration: 0.8, ease: 'power1.inOut' },
-        '>'
-      );
-      tl.to({}, { duration: 0.1 });
+    ordered.forEach(item => {
+      if (item.classList.contains('scene__item--annotation')) {
+        // Annotation: write in via clip-path after previous item
+        tl.fromTo(item,
+          { clipPath: 'inset(0 100% 0 0)', opacity: 1 },
+          { clipPath: 'inset(0 0% 0 0)', duration: 0.8, ease: 'power1.inOut' },
+          '>'
+        );
+      } else {
+        animateApproach(tl, item, '>');
+      }
+      tl.to({}, { duration: 0.12 }); // breath between items
     });
 
-    tl.to({}, { duration: def.holdDuration }); // hold all visible
+    tl.to({}, { duration: def.holdDuration });
 
   } else if (def.type === 'sequential') {
     // Each item enters; previous item recedes to left when next arrives
@@ -103,11 +111,17 @@ function buildScene(tl, def) {
     '>'
   );
 
-  // Reset scene (so it doesn't interfere if timeline scrubs back)
+  // Reset (works for any type)
+  const allSceneItems = Array.from(el.querySelectorAll('.scene__item'));
   tl.set(el, { opacity: 0, rotateY: 0, x: '0', clearProps: 'transform' });
   if (label) tl.set(label, { opacity: 0, x: '0' });
-  items.forEach(item => tl.set(item, { opacity: 0, x: '0', scale: 1 }));
-  annotations.forEach(ann => tl.set(ann, { clipPath: 'inset(0 100% 0 0)' }));
+  allSceneItems.forEach(item => {
+    if (item.classList.contains('scene__item--annotation')) {
+      tl.set(item, { clipPath: 'inset(0 100% 0 0)' });
+    } else {
+      tl.set(item, { opacity: 0, x: '0', scale: 1, clearProps: 'transform' });
+    }
+  });
 }
 
 // ---- Build master timeline + initialize ScrollTrigger ----
