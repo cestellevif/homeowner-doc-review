@@ -6,6 +6,8 @@ function initChapter(el) {
   const revealEls = el.querySelectorAll('.reveal');
   if (!revealEls.length) return;
 
+  const peek = el.querySelector('.chapter__peek');
+
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: el,
@@ -14,6 +16,19 @@ function initChapter(el) {
       pin: true,
       scrub: false,
       anticipatePin: 1,
+      onEnter: () => {
+        // First .reveal element slides in from slightly right as chapter enters
+        const firstReveal = revealEls[0];
+        if (firstReveal) {
+          gsap.from(firstReveal, {
+            x: 60,
+            opacity: 0,
+            duration: 0.5,
+            ease: 'power2.out',
+            overwrite: 'auto',
+          });
+        }
+      },
     },
   });
 
@@ -24,6 +39,19 @@ function initChapter(el) {
     stagger: 0.25,
     ease: 'power2.out',
   });
+
+  // Peek text: pulse when pinned, fade when leaving
+  if (peek) {
+    ScrollTrigger.create({
+      trigger: el,
+      start: 'top top',
+      end: '+=' + pinDuration,
+      onEnter: () => gsap.to(peek, { opacity: 0.22, duration: 0.4 }),
+      onLeave: () => gsap.to(peek, { opacity: 0, duration: 0.3 }),
+      onEnterBack: () => gsap.to(peek, { opacity: 0.22, duration: 0.4 }),
+      onLeaveBack: () => gsap.to(peek, { opacity: 0.18, duration: 0.3 }),
+    });
+  }
 }
 
 window.addEventListener('DOMContentLoaded', () => {
