@@ -2,7 +2,8 @@
 gsap.registerPlugin(ScrollTrigger);
 
 function initChapter(el) {
-  const pinDuration = parseInt(el.dataset.pin || '1500') || 1500;
+  const isMobile = window.innerWidth < 640;
+  const pinDuration = (parseInt(el.dataset.pin || '1500') || 1500) * (isMobile ? 0.6 : 1);
   const revealEls = el.querySelectorAll('.reveal');
   if (!revealEls.length) return;
 

@@ -9,6 +9,7 @@
   --text:       #4a4a30;
   --text-faint: #7a7a50;
   --accent:     #cc2200;
+  --white:      #ffffff;
 }
 
 html { scroll-behavior: auto; }
@@ -170,4 +171,26 @@ body {
   left: 50%;
   transform: translateX(-50%);
   top: 4px;
+}
+
+/* ---- Mobile (≤640px) ---- */
+@media (max-width: 640px) {
+  /* Hide progress dot on small screens */
+  #progress-indicator {
+    display: none;
+  }
+
+  /* Hide peek text on mobile — too cluttered */
+  .chapter__peek {
+    display: none;
+  }
+
+  /* Tighter padding */
+  .chapter {
+    padding: 5vh 5vw;
+  }
+
+  #hero {
+    padding: 0 5vw;
+  }
 }
