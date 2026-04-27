@@ -54,11 +54,15 @@ function buildScene(tl, def) {
   }
 
   if (def.type === 'hero') {
-    // All hero items approach together
     items.forEach((item, i) => {
-      animateApproach(tl, item, i === 0 ? '>' : '<0.15');
+      tl.fromTo(item,
+        { x: '38vw', scale: 0.18, opacity: 0.6, transformOrigin: 'center center' },
+        { x: '0',    scale: 1,    opacity: 1,   transformOrigin: 'center center',
+          duration: 1.1, ease: 'expo.out' },
+        i === 0 ? '>' : '<0.2'
+      );
     });
-    tl.to({}, { duration: def.holdDuration }); // hold
+    tl.to({}, { duration: def.holdDuration });
 
   } else if (def.type === 'build') {
     // Process all scene__item children in DOM order (annotations interleaved with items)
@@ -101,6 +105,24 @@ function buildScene(tl, def) {
         );
       }
     });
+  }
+
+  // During hold: show ghost of next scene in distance
+  const currentIdx = SCENE_DEFS.findIndex(d => d.id === def.id);
+  const nextDef = SCENE_DEFS[currentIdx + 1];
+  if (nextDef) {
+    const nextEl = document.getElementById(nextDef.id);
+    const nextLabel = nextEl && nextEl.querySelector('.scene__label');
+    const nextFirstItem = nextEl && nextEl.querySelector('.scene__item');
+    const ghostEl = nextLabel || nextFirstItem;
+    if (ghostEl) {
+      tl.fromTo(ghostEl,
+        { x: '38vw', scale: 0.12, opacity: 0 },
+        { x: '35vw', scale: 0.12, opacity: 0.2, duration: 0.4 },
+        '<' // starts when hold starts
+      );
+      tl.set(ghostEl, { opacity: 0, x: '38vw' }, '>-0.1');
+    }
   }
 
   // Door fold exit — left hinge, panel swings right away from viewer

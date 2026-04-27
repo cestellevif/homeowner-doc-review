@@ -30,6 +30,7 @@ html, body {
   /* Perspective applied here so 3D transforms on children work */
   perspective: 1400px;
   perspective-origin: 50% 40%;
+  transform-style: preserve-3d;
 }
 
 /* ---- Scroll proxy: tall invisible element that drives scrolling ---- */
@@ -52,6 +53,7 @@ html, body {
   padding: 8vh 8vw;
   opacity: 0;           /* JS controls opacity */
   transform-style: preserve-3d;
+  will-change: transform, opacity;
 }
 
 /* ---- Scene label (sticky heading) ---- */
