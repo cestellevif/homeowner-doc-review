@@ -25,7 +25,7 @@ function initChapter(el) {
             opacity: 0,
             duration: 0.5,
             ease: 'power2.out',
-            overwrite: 'auto',
+            overwrite: true,
           });
         }
       },
@@ -49,7 +49,7 @@ function initChapter(el) {
       onEnter: () => gsap.to(peek, { opacity: 0.22, duration: 0.4 }),
       onLeave: () => gsap.to(peek, { opacity: 0, duration: 0.3 }),
       onEnterBack: () => gsap.to(peek, { opacity: 0.22, duration: 0.4 }),
-      onLeaveBack: () => gsap.to(peek, { opacity: 0.18, duration: 0.3 }),
+      onLeaveBack: () => gsap.to(peek, { opacity: 0.18, duration: 0.3 }), // intentional: leave ghost trace when scrolling back up
     });
   }
 }
