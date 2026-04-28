@@ -29,6 +29,17 @@
       <p class="simmons-pin-role">Director of Parks, Arts &amp; Recreation &nbsp;·&nbsp; City of Olympia</p>
     </div>
 
+    <!-- Pinned Swanson Law name — visible only during their three quote panels -->
+    <div id="swanson-pin">
+      <p class="simmons-pin-name">Swanson Law Firm</p>
+      <p class="simmons-pin-role">Legal opinion &nbsp;·&nbsp; 2017</p>
+    </div>
+
+    <!-- Pinned liability title — slides up from panel, stays for 2 discussion panels -->
+    <div id="liability-pin">
+      <p class="simmons-pin-name" style="color:var(--accent);">liability.</p>
+    </div>
+
     <!-- All panels -->
     <div id="panels-wrapper">
 
@@ -41,32 +52,28 @@
         </div>
       </div>
 
-      <!-- 2 · BACKGROUND 1 -->
+      <!-- 2 · BACKGROUND 1 — subtitle fades in during sticky hold -->
       <div class="panel" id="p-bg-1">
         <div class="panel__content">
           <h2 class="p-heading">We actually have a lot of information about the trail.</h2>
-        </div>
-      </div>
-
-      <!-- 3 · BACKGROUND 2 -->
-      <div class="panel" id="p-bg-2">
-        <div class="panel__content">
-          <p class="p-body">A background document sums up key points from primary sources.</p>
-          <p class="p-annotation">Let's go to July &nbsp;→</p>
+          <div id="bg-reveal" style="opacity:0;">
+            <p class="p-body">A background document sums up key points from primary sources.</p>
+            <p class="p-annotation">Let's go to July, 2024 &nbsp;→</p>
+          </div>
         </div>
       </div>
 
       <!-- 4 · MARJ YOUNG PARK -->
       <div class="panel" id="p-park">
         <div class="panel__content">
-          <p class="p-date">Marj Young Park</p>
+          <p class="p-date">Biking & Hiking in our Backyard</p>
           <div class="p-park-layout">
             <div class="p-park-map">
               <img src="../docs/KaiserWoods/5.jpg" alt="Kaiser Woods / Marj Young Park trail map, City of Olympia" />
             </div>
             <div class="p-park-text">
-              <h2 class="p-heading p-heading--olive">Now the<br>Marj Young Park,</h2>
-              <p class="p-body">The City of Olympia plans to develop biking and hiking trails for citizens</p>
+              <h2 class="p-heading p-heading--olive">Kaiser Woods Park, <br>Now the Marj Young Park,</h2>
+              <p class="p-body">Will be developed by the City of Olympia with biking and hiking trails</p>
               <p class="p-body p-olive">on 70 acres of woodland.</p>
             </div>
           </div>
@@ -74,12 +81,7 @@
       </div>
 
       <!-- 5 · PAUL SIMMONS — INTRO CARD -->
-      <div class="panel" id="p-simmons-0">
-        <div class="panel__content">
-          <p class="p-speaker-name">Paul<br>Simmons</p>
-          <p class="p-speaker-role">Director of Parks, Arts &amp; Recreation<br>City of Olympia</p>
-        </div>
-      </div>
+      
 
       <!-- 6 · SIMMONS QUOTE 1 (name pinned at top via JS) -->
       <div class="panel panel--quote-under-pin" id="p-simmons-1">
@@ -102,29 +104,29 @@
         </div>
       </div>
 
-      <!-- 9 · SWANSON 1 — OVERVIEW -->
-      <div class="panel" id="p-swanson-1">
+      <!-- 9 · SWANSON 0 — INTRO CARD -->
+      
+
+      <!-- 10 · SWANSON 1 — OVERVIEW -->
+      <div class="panel panel--quote-under-pin" id="p-swanson-1">
         <div class="panel__content">
-          <p class="p-date">Swanson Law Firm, 2017</p>
-          <h2 class="p-heading p-heading--olive">The covenants and bylaws permit a walking path.</h2>
+          <h2 class="p-heading p-heading--olive">The covenants and bylaws permit the board to purchase or otherwise secure a walking path.</h2>
           <p class="p-quote">"Based on my review of the documents listed above, I believe the Protective Covenants and Bylaws of Lakemoor permit the Club to install a walking path on the parcel. Furthermore, based on my analysis below, I believe it is permissible to use Lot 135 to provide pedestrian access to the Parcel from Lakemoor Drive, for the benefit of the residents of Lakemoor."</p>
           <p class="p-annotation">This is what we had!</p>
         </div>
       </div>
 
       <!-- 10 · SWANSON 2 — ARTICLE VIII -->
-      <div class="panel" id="p-swanson-2">
+      <div class="panel panel--quote-under-pin" id="p-swanson-2">
         <div class="panel__content">
-          <p class="p-date">Swanson Law Firm, 2017</p>
           <p class="p-body" style="font-weight:700;">Article VIII(E): "street or public way"</p>
           <p class="p-quote">The last sentence states "No lot shall ever be used for or dedicated as a street or other public way to areas outside of Lakemoor Division 2 through 5." The project contemplated here is not a street or public way. "Public way" generally refers to passageways such as streets, alleys or sidewalks open to the public as a matter of right — contrasted to a "private way," defined as a way laid out by a private owner and maintained at their expense.</p>
         </div>
       </div>
 
       <!-- 11 · SWANSON 3 — BYLAWS -->
-      <div class="panel" id="p-swanson-3">
+      <div class="panel panel--quote-under-pin" id="p-swanson-3">
         <div class="panel__content">
-          <p class="p-date">Swanson Law Firm, 2017</p>
           <p class="p-body" style="font-weight:700;">Bylaws</p>
           <p class="p-quote">The Bylaws grant broad powers to the Directors of Lakemoor. Improvement of a walking path on land owned by the Club is clearly within the scope of the Board's powers under Paragraph 4.1.1 of the Bylaws.</p>
           <p class="p-annotation">This shows that acquiring an easement or walking path is within scope.</p>
@@ -136,6 +138,7 @@
         <div class="panel__content">
           <p class="p-date">The Record</p>
           <h2 class="p-heading">Report to the Board<br>on Kaiser Woods Trail</h2>
+          <p class="p-body">Submitted to the board July 2024</p>
           <p class="p-body">This seems to be missing from the record on VIS.</p>
           <p class="p-annotation">Do you have a copy?</p>
         </div>
@@ -144,7 +147,6 @@
       <!-- 13 · JUNE 2024 -->
       <div class="panel" id="p-june2024">
         <div class="panel__content">
-          <p class="p-date">June 2024</p>
           <h2 class="p-heading">"Seems like a total win-win for all of us. Moving forward it is an asset to many user groups. Looking forward to the future of the community."</h2>
           <p class="p-source">Minutes, June 2024</p>
         </div>
@@ -154,7 +156,7 @@
       <div class="panel" id="p-sept2024">
         <div class="panel__content">
           <p class="p-date">September 2024</p>
-          <h2 class="p-heading p-heading--olive">The board moves to vote.</h2>
+          <h2 class="p-heading p-heading--olive">The board moves to a member vote.</h2>
           <p class="p-quote">Motion: the board of directors submit to the community a proposal to purchase an easement at 2151 Lakemoor Dr. This vote shall occur between 10/1 &amp; 10/21/2024; and the board will respect the outcome of the vote.</p>
           <p class="p-body" style="margin-top:0.8rem;">Seconded. &nbsp;—&nbsp; Roll call vote: <strong>it passes.</strong></p>
           <p class="p-body p-olive" style="font-weight:700;">A simple majority of votes will win.</p>
@@ -165,64 +167,48 @@
       <div class="panel" id="p-oct2024-1">
         <div class="panel__content">
           <p class="p-date">October 2024</p>
-          <h2 class="p-heading p-heading--olive">The board began to work on acquiring an easement.</h2>
+          <h2 class="p-heading p-heading--olive">And we got it! 60% of votes turned in voted 'yes!'</h2>
           <p class="p-quote">LCC will allocate the sum of $12,000 to purchase an easement on the undeveloped residential lot located at 2151 Lakemoor Dr. by October 31, 2024, for the purpose of securing exclusive, private, access to and from Kaiser Woods Park for Ken Lake residents.</p>
-          <p class="p-body" style="font-weight:700; margin-top:0.8rem;">Voted — carried.</p>
+          <p class="p-body" style="font-weight:700; margin-top:0.8rem;">Voted — carried by the board of directors.</p>
           <p class="p-annotation">We know our lawyer produced a letter. Where is it?</p>
         </div>
       </div>
 
-      <!-- 16 · OCT 2024 — BECKER LETTER -->
+      <!-- 16 · OCT 2024 — THREE-PART STORY (date rises, parts reveal in sequence) -->
       <div class="panel" id="p-oct2024-2">
         <div class="panel__content">
-          <p class="p-date">October 2024</p>
-          <p class="p-body" style="font-style:italic; color:var(--text-mid);">(they live next door.)</p>
-          <h2 class="p-heading">Becker and Regis produce a letter from their lawyer to <span class="p-accent">stop the purchase.</span></h2>
+          <p class="p-date" id="oct-date">October 2024</p>
+          <div id="oct-p1" style="opacity:0;">
+            <h3 class="p-heading-sm">Becker and Regis produce a letter from their lawyer to <span class="p-accent">stop the purchase.</span></h3>
+            <p class="p-body" style="font-style:italic; color:var(--text-mid);">(they live next door.)</p>
+          </div>
+          <div id="oct-p2" style="opacity:0; margin-top:1.4rem;">
+            <h3 class="p-heading-sm">The counsel calls the path a &#8216;public way&#8217;</h3>
+            <p class="p-body"><span class="p-accent">All language would be for private use to LCC membership.</span></p>
+          </div>
+          <div id="oct-p3" style="opacity:0; margin-top:1.4rem;">
+            <h3 class="p-heading-sm">The counsel argues that a supermajority is needed</h3>
+            <p class="p-body"><span class="p-accent">but that&#8217;s only for special assessments per Covenant VI.B.</span></p>
+          </div>
         </div>
       </div>
 
-      <!-- 17 · OCT 2024 — COUNSEL: PUBLIC WAY -->
-      <div class="panel" id="p-oct2024-3">
-        <div class="panel__content">
-          <p class="p-date">October 2024</p>
-          <h2 class="p-heading">The counsel calls the path a &#8216;public way&#8217;</h2>
-          <p class="p-body"><span class="p-accent">All language is private to LCC.</span></p>
-        </div>
-      </div>
-
-      <!-- 18 · OCT 2024 — COUNSEL: SUPERMAJORITY -->
-      <div class="panel" id="p-oct2024-4">
-        <div class="panel__content">
-          <p class="p-date">October 2024</p>
-          <h2 class="p-heading">The counsel argues that a supermajority is needed</h2>
-          <p class="p-body"><span class="p-accent">but that&#8217;s only for special assessments.</span></p>
-        </div>
-      </div>
-
-      <!-- 19 · DEC 2024 — TOO LONG -->
+      <!-- 19 · DEC 2024 — THREE-PART STORY (merged) -->
       <div class="panel" id="p-dec2024-1">
         <div class="panel__content">
-          <p class="p-date">December 2024</p>
-          <h2 class="p-heading--xl">The owners have to sell.</h2>
-          <h2 class="p-heading--xl p-heading--accent">We took too long.</h2>
-        </div>
-      </div>
-
-      <!-- 20 · DEC 2024 — THE PLAN -->
-      <div class="panel" id="p-dec2024-2">
-        <div class="panel__content">
-          <p class="p-date">December 2024</p>
-          <h2 class="p-heading">They have a plan. They work with the new owners.</h2>
-          <p class="p-body">They use a <span class="p-accent">&#8216;Declaration of Covenant&#8217;</span></p>
-          <p class="p-body">The new owners will maintain a private footpath — <span class="p-accent">private to the grantees.</span></p>
-        </div>
-      </div>
-
-      <!-- 21 · DEC 2024 — GRANTEES -->
-      <div class="panel" id="p-dec2024-3">
-        <div class="panel__content">
-          <p class="p-date">December 2024</p>
-          <h2 class="p-heading--xl">LCC Members<br>are the grantees.</h2>
+          <p class="p-date" id="dec-date">December 2024</p>
+          <div id="dec-p1" style="opacity:0;">
+            <h3 class="p-heading-sm">The owners have to sell.</h3>
+            <h3 class="p-heading-sm p-heading--accent">We took too long.</h3>
+          </div>
+          <div id="dec-p2" style="opacity:0; margin-top:1.4rem;">
+            <h3 class="p-heading-sm">They have a plan — they work with the new owners.</h3>
+            <p class="p-body">They use a <span class="p-accent">&#8216;Declaration of Covenant&#8217;</span></p>
+            <p class="p-body">The new owners will maintain a private footpath — <span class="p-accent">private to the grantees.</span></p>
+          </div>
+          <div id="dec-p3" style="opacity:0; margin-top:1.4rem;">
+            <h3 class="p-heading-sm p-heading--olive">LCC Members are the grantees.</h3>
+          </div>
         </div>
       </div>
 
@@ -232,18 +218,27 @@
           <p class="p-date">The Covenant</p>
           <div class="p-doc"><strong>2.3 &nbsp;No Dedication to the Public.</strong> Nothing contained herein shall be deemed to be a gift or dedication of any portion of the Burdened Parcel to the general public or for the general public or for any public uses whatsoever, it being the intention of the Grantor that this Covenant shall be only for the benefit of Grantee.</div>
           <h2 class="p-heading p-heading--accent">This footpath was ours.</h2>
-          <p class="p-body">After years of careful research, we had a legal right to the access point. A footpath, not an easement.</p>
-          <p class="p-body">We wanted it. We use it. The city wanted it for us.</p>
-          <p class="p-source" style="font-style:italic;">It cost nothing.</p>
+          <p class="p-body">After years of careful research, discussion, and voting, we had a legal right to the access point. A footpath, maintained by the owners for the next 15 years.</p>
+          <p class="p-body" id="cov-p1" style="opacity:0;">We wanted it.</p>
+          <p class="p-body" id="cov-p2" style="opacity:0;">We use it.</p>
+          <p class="p-body" id="cov-p3" style="opacity:0;">The city wanted it for us.</p>
+          <p class="p-annotation" id="cov-finale" style="opacity:0;">It cost nothing.</p>
         </div>
       </div>
 
-      <!-- 23 · NOV 2025 — EXECUTIVE SESSION -->
+      <!-- SO WHAT HAPPENED? -->
+      <div class="panel" id="p-sowhat">
+        <div class="panel__content">
+          <h2 class="p-heading--xl" style="font-size:clamp(3.5rem,9vw,8rem); line-height:1.0;">So...<br>What<br>Happened?</h2>
+        </div>
+      </div>
+
+      <!-- NOV 2025 — EXECUTIVE SESSION -->
       <div class="panel" id="p-nov2025-1">
         <div class="panel__content">
           <p class="p-date">November 2025</p>
           <p class="p-body">Becker is now a board director.</p>
-          <h2 class="p-heading">The board begins discussing the &#8216;Declaration of Covenant&#8217; <span class="p-accent">in executive session.</span></h2>
+          <h2 class="p-heading">The board begins discussing the &#8216;Declaration of Covenant&#8217; <span class="p-accent"><p>in executive session.</span></h2>
         </div>
       </div>
 
@@ -253,25 +248,110 @@
           <p class="p-date">November 2025</p>
           <p class="p-body">The intent is to respect the owners. We are the grantees.</p>
           <h2 class="p-heading"><span class="p-accent">We deserve to know when our access is a topic.</span></h2>
-          <p class="p-annotation">AND what research is being done, and what our legal rights are.</p>
+          <p class="p-annotation">AND what research is being presented, because we have a legal right to respond.</p>
         </div>
       </div>
 
-      <!-- 25 · SO WHAT HAPPENED? -->
-      <div class="panel" id="p-sowhat">
+      <!-- APR 2026 — REJECTION VOTE (staged reveal) -->
+      <div class="panel" id="p-apr2026-1">
         <div class="panel__content">
-          <h2 class="p-heading--xl" style="font-size:clamp(3.5rem,9vw,8rem); line-height:1.0;">So...<br>What<br>Happened?</h2>
+          <p class="p-date" id="apr-date">April 2026</p>
+          <div id="apr-p1" style="opacity:0;"><h3 class="p-heading-sm">In a planning session,</h3></div>
+          <div id="apr-p2" style="opacity:0;"><h3 class="p-heading-sm">with no agenda,</h3></div>
+          <div id="apr-p3" style="opacity:0;"><h3 class="p-heading-sm">unannounced,</h3></div>
+          <div id="apr-p4" style="opacity:0; margin-top:0.6rem;"><h3 class="p-heading-sm p-heading--accent">The board votes to file a rejection.</h3></div>
         </div>
       </div>
 
-      <!-- 26 · WHAT SHOULD HAPPEN NEXT -->
+      <!-- APR 2026 — THE REJECTION DOCUMENT -->
+      <div class="panel" id="p-apr2026-2">
+        <div class="panel__content">
+          <p class="p-date">April 2026</p>
+          <div class="p-doc">
+            <strong>Notice of Rejection, Disclaimer &amp; Termination of Declaration of Covenant</strong><br><br>
+            Without the knowledge, consent, request, or acceptance by Lakemoor Community Club
+            (&ldquo;Grantee&rdquo;), Dirk Francis Havlak and Dixie Rhodes Havlak (&ldquo;Grantors&rdquo;) recorded a
+            document entitled &ldquo;Declaration of Covenant&rdquo; on December 6, 2025 under Thurston County
+            Auditor&rsquo;s No. 5039149 (&ldquo;Covenant&rdquo;), which purported to convey Grantee limited
+            ingress-egress rights over a portion of Lot 33 of Lakemoor Division Three (&ldquo;Easement&rdquo;).<br><br>
+            Because Grantee never sought acquisition of the Easement nor any obligations that may come with it,
+            Grantee, through its Board of Directors, voted unanimously at a meeting held on 4/7, 2026, to reject,
+            disclaim, and terminate the Covenant in its entirety.
+          </div>
+        </div>
+      </div>
+
+      <!-- APR 2026 — FOOTPATH WITH NO STRINGS -->
+      <div class="panel" id="p-apr2026-3">
+        <div class="panel__content">
+          <p class="p-body">We did seek an easement.</p>
+          <h2 class="p-heading p-heading--olive">We received a footpath<br>with no strings attached.</h2>
+          <p class="p-annotation">From generous neighbors who were done waiting on the board.</p>
+        </div>
+      </div>
+
+      <!-- APR 2026 — TEMPORARY SOLUTION -->
+      <div class="panel" id="p-apr2026-4">
+        <div class="panel__content">
+          <p class="p-body">The solution was temporary.</p>
+          <h2 class="p-heading">It gave us time to put together an offer.</h2>
+        </div>
+      </div>
+
+      <!-- APR 2026 — COULD WAIT / LIABILITY -->
+      <div class="panel" id="p-apr2026-5">
+        <div class="panel__content">
+          <p class="p-date">April 2026</p>
+          <p class="p-body" style="font-style:italic;">&ldquo;It could wait&rdquo;</p>
+          <h2 class="p-heading">There was no urgency<br>to reject the footpath.</h2>
+          <p class="p-body">We could produce numbers, justify the only potential threat presented:</p>
+          <p id="apr5-liability" class="p-heading--xl p-heading--accent" style="font-size:clamp(2.5rem,5vw,5rem); line-height:1;">liability.</p>
+        </div>
+      </div>
+
+      <!-- APR 2026 — LIABILITY: PROBLEM OR EXCUSE -->
+      <div class="panel panel--quote-under-pin" id="p-apr2026-6">
+        <div class="panel__content">
+          <p class="p-body">We have 4 other parks. Another trail. Events with dogs and kids.</p>
+          <h2 class="p-heading">Is liability a problem?</h2>
+          <h2 class="p-heading p-heading--accent">Or an excuse?</h2>
+        </div>
+      </div>
+
+      <!-- APR 2026 — TRUST -->
+      <div class="panel panel--quote-under-pin" id="p-apr2026-7">
+        <div class="panel__content">
+          <p class="p-body">We should have known before filing. Is it in the 2024 reports?</p>
+          <h2 class="p-heading">What did we know when we were trying to purchase the easement?</h2>
+          <p class="p-annotation">Why should we trust anything now, without that history?</p>
+        </div>
+      </div>
+
+      <!-- WHAT SHOULD HAPPEN NEXT -->
       <div class="panel" id="p-next">
         <div class="panel__content">
           <h2 class="p-heading--xl p-heading--olive">What Should<br>Happen Next</h2>
         </div>
       </div>
 
-      <!-- 27 · CTA -->
+      <!-- WHAT SHOULD HAPPEN NEXT — ACTIONS -->
+      <div class="panel" id="p-next-1">
+        <div class="panel__content">
+          <h3 class="p-heading-sm">Re-file the Declaration.</h3>
+          <h3 class="p-heading-sm p-heading--accent" style="margin-top:0.8rem;">Present actual evidence.</h3>
+          <h3 class="p-heading-sm" style="margin-top:0.8rem;">Becker needs to recuse herself<br>from future discussions.</h3>
+        </div>
+      </div>
+
+      <!-- WHAT SHOULD HAPPEN NEXT — BIG DEAL -->
+      <div class="panel" id="p-next-2">
+        <div class="panel__content">
+          <p class="p-body">The board works for the membership.</p>
+          <h2 class="p-heading">Giving away a common asset, <span class="p-accent">granted to all members,</span> is a REALLY REALLY big deal.</h2>
+        </div>
+      </div>
+
+      <!-- CTA -->
       <div class="panel" id="p-cta">
         <div class="panel__content">
           <p class="p-eyebrow">Reach out. Get involved.</p>
