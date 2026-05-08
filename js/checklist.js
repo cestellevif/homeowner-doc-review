@@ -19,16 +19,17 @@ const QUESTIONS = [
 // Per-article checklist status. Index matches question order above.
 // null = not yet assessed, true = yes (green), false = no (red)
 const STATUS = {
-  '1':  [false, null, null, null, null, false, null, null, null],
-  '2':  [null,  null, null, false, null, null, null, false, null],
-  '3':  [null,  null, null, null,  null, null, null, null, null],
-  '4':  [null,  null, null, null,  null, null, null, null, null],
-  '5':  [null,  null, null, null,  null, null, null, null, null],
-  '6':  [null,  null, null, null,  null, null, null, null, null],
-  '7':  [null,  null, null, null,  null, null, null, null, null],
-  '8':  [null,  null, null, null,  null, null, null, null, null],
-  '9':  [null,  null, null, null,  null, null, null, null, null],
-  '10': [null,  null, null, null,  null, null, null, null, null]
+  //        Q1     Q2     Q3     Q4     Q5     Q6     Q7     Q8     Q9
+  '1':  [false,  true,  true,  true,  true, false,  true,  true,  true],
+  '2':  [ true,  true,  true, false,  true,  true,  true,  true,  true],
+  '3':  [ null,  null,  null,  null,  null,  null,  null,  null,  null],
+  '4':  [ null,  null,  null,  null,  null,  null,  null,  null,  null],
+  '5':  [ null,  null,  null,  null,  null,  null,  null,  null,  null],
+  '6':  [ null,  null,  null,  null,  null,  null,  null,  null,  null],
+  '7':  [ null,  null,  null,  null,  null,  null,  null,  null,  null],
+  '8':  [ null,  null,  null,  null,  null,  null,  null,  null,  null],
+  '9':  [ null,  null,  null,  null,  null,  null,  null,  null,  null],
+  '10': [ null,  null,  null,  null,  null,  null,  null,  null,  null]
 };
 
 function getArticleNumber() {
