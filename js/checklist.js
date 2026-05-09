@@ -22,7 +22,7 @@ function injectStyles() {
     #checklist-toggle {
       position: fixed !important;
       bottom: 5rem !important;
-      right: 1.5rem !important;
+      left: 1.5rem !important;
       z-index: 9000 !important;
       background: #1e293b !important;
       color: white !important;
@@ -43,14 +43,14 @@ function injectStyles() {
     #checklist-panel {
       position: fixed !important;
       top: 0 !important;
-      right: 0 !important;
+      left: 0 !important;
       height: 100% !important;
       width: 320px !important;
       max-width: 100vw !important;
       background: white !important;
       z-index: 9001 !important;
-      box-shadow: -4px 0 24px rgba(0,0,0,0.18) !important;
-      transform: translateX(100%) !important;
+      box-shadow: 4px 0 24px rgba(0,0,0,0.18) !important;
+      transform: translateX(-100%) !important;
       transition: transform 0.25s ease !important;
       display: flex !important;
       flex-direction: column !important;
