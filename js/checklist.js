@@ -1,7 +1,7 @@
 /**
- * checklist.js — Floating review checklist panel for revised bylaws article pages.
- * Injects its own <style> block so styles survive Tailwind CDN's dynamic injection.
- * null = not yet assessed (gray), true = met (green), false = not met (red)
+ * checklist.js — Floating reference checklist for revised bylaws article pages.
+ * A personal reading aid: tick questions off as you review each article.
+ * Nothing is saved — resets on page navigation.
  */
 
 const QUESTIONS = [
@@ -15,22 +15,6 @@ const QUESTIONS = [
   'Is this fair in application?',
   'Does this enable participation or oversight?'
 ];
-
-// Per-article checklist status. Index matches question order above.
-// null = not yet assessed, true = yes (green), false = no (red)
-const STATUS = {
-  //        Q1     Q2     Q3     Q4     Q5     Q6     Q7     Q8     Q9
-  '1':  [false,  true,  true,  true,  true, false,  true,  true,  true],
-  '2':  [ true,  true,  true, false,  true,  true,  true,  true,  true],
-  '3':  [ null,  null,  null,  null,  null,  null,  null,  null,  null],
-  '4':  [ null,  null,  null,  null,  null,  null,  null,  null,  null],
-  '5':  [ null,  null,  null,  null,  null,  null,  null,  null,  null],
-  '6':  [ null,  null,  null,  null,  null,  null,  null,  null,  null],
-  '7':  [ null,  null,  null,  null,  null,  null,  null,  null,  null],
-  '8':  [ null,  null,  null,  null,  null,  null,  null,  null,  null],
-  '9':  [ null,  null,  null,  null,  null,  null,  null,  null,  null],
-  '10': [ null,  null,  null,  null,  null,  null,  null,  null,  null]
-};
 
 function injectStyles() {
   const style = document.createElement('style');
@@ -93,10 +77,17 @@ function injectStyles() {
       cursor: pointer !important;
       padding: 0 !important;
     }
+    .cl-subhead {
+      padding: 0.75rem 1.25rem 0.25rem;
+      font-size: 0.75rem;
+      color: #6b7280;
+      border-bottom: 1px solid #f1f5f9;
+      flex-shrink: 0;
+    }
     .cl-list {
       list-style: none !important;
       margin: 0 !important;
-      padding: 0.75rem 1.25rem !important;
+      padding: 0.5rem 1.25rem !important;
       overflow-y: auto !important;
       flex: 1 !important;
     }
@@ -104,38 +95,54 @@ function injectStyles() {
       display: flex !important;
       align-items: flex-start !important;
       gap: 0.75rem !important;
-      padding: 0.7rem 0 !important;
-      border-bottom: 1px solid #f1f5f9 !important;
+      padding: 0.65rem 0 !important;
+      border-bottom: 1px solid #f8fafc !important;
+      cursor: pointer !important;
     }
     .cl-item:last-child { border-bottom: none !important; }
-    .cl-dot {
-      width: 0.6rem !important;
-      height: 0.6rem !important;
-      border-radius: 9999px !important;
+    .cl-item input[type="checkbox"] {
+      margin-top: 0.2rem !important;
       flex-shrink: 0 !important;
-      margin-top: 0.3rem !important;
+      width: 1rem !important;
+      height: 1rem !important;
+      accent-color: #0d9488 !important;
+      cursor: pointer !important;
     }
-    .cl-dot-green { background: #10b981 !important; }
-    .cl-dot-red   { background: #ef4444 !important; }
-    .cl-dot-gray  { background: #d1d5db !important; }
-    .cl-q {
+    .cl-item label {
       font-size: 0.8125rem !important;
       color: #374151 !important;
       line-height: 1.5 !important;
+      cursor: pointer !important;
+    }
+    .cl-item.cl-checked label {
+      color: #9ca3af !important;
+      text-decoration: line-through !important;
+    }
+    .cl-footer {
+      padding: 0.75rem 1.25rem;
+      border-top: 1px solid #f1f5f9;
+      flex-shrink: 0;
+    }
+    #cl-reset {
+      width: 100%;
+      padding: 0.5rem;
+      background: none !important;
+      border: 1px solid #e5e7eb !important;
+      border-radius: 0.375rem !important;
+      font-size: 0.75rem !important;
+      color: #6b7280 !important;
+      cursor: pointer !important;
+    }
+    #cl-reset:hover {
+      border-color: #9ca3af !important;
+      color: #374151 !important;
     }
   `;
   document.head.appendChild(style);
 }
 
-function getArticleNumber() {
-  return window.location.pathname.split('/').pop().replace('.html', '');
-}
-
 function buildPanel() {
   injectStyles();
-
-  const article = getArticleNumber();
-  const statuses = STATUS[article] || Array(9).fill(null);
 
   // Floating toggle button
   const btn = document.createElement('button');
@@ -152,28 +159,42 @@ function buildPanel() {
   panel.setAttribute('role', 'dialog');
   panel.setAttribute('aria-label', 'Review checklist');
 
-  const items = QUESTIONS.map((q, i) => {
-    const s = statuses[i];
-    const dotCls = s === true ? 'cl-dot-green' : s === false ? 'cl-dot-red' : 'cl-dot-gray';
-    const label = s === true ? 'Met' : s === false ? 'Not met' : 'Not yet assessed';
-    return `<li class="cl-item">
-      <span class="cl-dot ${dotCls}" aria-label="${label}"></span>
-      <span class="cl-q">${i + 1}. ${q}</span>
-    </li>`;
-  }).join('');
+  const items = QUESTIONS.map((q, i) => `
+    <li class="cl-item" id="cl-item-${i}">
+      <input type="checkbox" id="cl-cb-${i}" onchange="toggleItem(${i})">
+      <label for="cl-cb-${i}">${i + 1}. ${q}</label>
+    </li>
+  `).join('');
 
   panel.innerHTML = `
     <div class="cl-header">
       <span>Review Checklist</span>
-      <button class="cl-close" onclick="toggleChecklist()" aria-label="Close checklist">&times;</button>
+      <button class="cl-close" onclick="toggleChecklist()" aria-label="Close">&times;</button>
     </div>
+    <p class="cl-subhead">Check off each question as you review this article.</p>
     <ol class="cl-list">${items}</ol>
+    <div class="cl-footer">
+      <button id="cl-reset" onclick="resetChecklist()">Reset all</button>
+    </div>
   `;
   document.body.appendChild(panel);
 }
 
 function toggleChecklist() {
   document.getElementById('checklist-panel').classList.toggle('cl-open');
+}
+
+function toggleItem(i) {
+  const item = document.getElementById('cl-item-' + i);
+  const cb = document.getElementById('cl-cb-' + i);
+  item.classList.toggle('cl-checked', cb.checked);
+}
+
+function resetChecklist() {
+  QUESTIONS.forEach((_, i) => {
+    document.getElementById('cl-cb-' + i).checked = false;
+    document.getElementById('cl-item-' + i).classList.remove('cl-checked');
+  });
 }
 
 if (document.readyState === 'loading') {
