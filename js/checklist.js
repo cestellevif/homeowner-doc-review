@@ -2,12 +2,16 @@
  * checklist.js — Floating reference checklist for revised bylaws article pages.
  * A personal reading aid: tick questions off as you review each article.
  * Nothing is saved — resets on page navigation.
+ *
+ * Questions can be a plain string or an object with subItems. When subItems
+ * are present, the parent checkbox starts disabled — you must check at least
+ * one sub-item before you can mark the parent question as done.
  */
 
 const QUESTIONS = [
   'Is the verbiage clear?',
   'What RCWs are relevant, and is this article in line?',
-  'Does this protect: <span class="cl-sub-list"><span class="cl-sub-item">Members</span><span class="cl-sub-item">Organization</span><span class="cl-sub-item">Assets</span></span>',
+  { text: 'Does this protect:', subItems: ['Members', 'Organization', 'Assets'] },
   'Are the processes repeatable, and do they support board transition over time?',
   'Is this something that should be easy to change, or difficult to change?',
   'Does this incur responsibility on an officer or agent? Does there need to be a backstop?',
@@ -97,7 +101,6 @@ function injectStyles() {
       gap: 0.75rem !important;
       padding: 0.65rem 0 !important;
       border-bottom: 1px solid #f8fafc !important;
-      cursor: pointer !important;
     }
     .cl-item:last-child { border-bottom: none !important; }
     .cl-item input[type="checkbox"] {
@@ -108,36 +111,56 @@ function injectStyles() {
       accent-color: #0d9488 !important;
       cursor: pointer !important;
     }
-    .cl-item label {
+    .cl-item input[type="checkbox"]:disabled {
+      opacity: 0.35 !important;
+      cursor: not-allowed !important;
+    }
+    .cl-item-body {
+      flex: 1 !important;
+    }
+    .cl-item-body > label {
       font-size: 0.8125rem !important;
       color: #374151 !important;
       line-height: 1.5 !important;
       cursor: pointer !important;
+      display: block !important;
     }
-    .cl-item.cl-checked label {
+    .cl-item.cl-checked > .cl-item-body > label {
       color: #9ca3af !important;
       text-decoration: line-through !important;
     }
+
+    /* Sub-items — real checkboxes indented below the parent label */
     .cl-sub-list {
+      list-style: none !important;
+      margin: 0.4rem 0 0 0 !important;
+      padding: 0 !important;
       display: flex !important;
       flex-direction: column !important;
-      gap: 0.2rem !important;
-      margin-top: 0.35rem !important;
+      gap: 0.3rem !important;
     }
     .cl-sub-item {
       display: flex !important;
       align-items: center !important;
-      gap: 0.4rem !important;
+      gap: 0.5rem !important;
     }
-    .cl-sub-item::before {
-      content: '' !important;
-      display: inline-block !important;
-      width: 0.75rem !important;
-      height: 0.75rem !important;
-      border: 1px solid #9ca3af !important;
-      border-radius: 2px !important;
-      flex-shrink: 0 !important;
+    .cl-sub-item input[type="checkbox"] {
+      margin-top: 0 !important;
+      width: 0.875rem !important;
+      height: 0.875rem !important;
+      accent-color: #0d9488 !important;
+      cursor: pointer !important;
     }
+    .cl-sub-item label {
+      font-size: 0.8125rem !important;
+      color: #374151 !important;
+      cursor: pointer !important;
+    }
+    .cl-sub-item.cl-sub-checked label {
+      color: #9ca3af !important;
+      text-decoration: line-through !important;
+    }
+
     .cl-footer {
       padding: 0.75rem 1.25rem;
       border-top: 1px solid #f1f5f9;
@@ -161,6 +184,36 @@ function injectStyles() {
   document.head.appendChild(style);
 }
 
+// Render a single list item. Questions with subItems get a disabled parent
+// checkbox and a nested sub-list of individually checkable options.
+function renderItem(q, i) {
+  if (typeof q === 'string') {
+    return `
+      <li class="cl-item" id="cl-item-${i}">
+        <input type="checkbox" id="cl-cb-${i}" onchange="toggleItem(${i})">
+        <div class="cl-item-body">
+          <label for="cl-cb-${i}">${i + 1}. ${q}</label>
+        </div>
+      </li>`;
+  }
+
+  // Object with subItems — parent starts disabled
+  const subHtml = q.subItems.map((label, j) => `
+    <li class="cl-sub-item" id="cl-sub-item-${i}-${j}">
+      <input type="checkbox" id="cl-sub-${i}-${j}" onchange="toggleSubItem(${i}, ${j})">
+      <label for="cl-sub-${i}-${j}">${label}</label>
+    </li>`).join('');
+
+  return `
+    <li class="cl-item" id="cl-item-${i}">
+      <input type="checkbox" id="cl-cb-${i}" onchange="toggleItem(${i})" disabled>
+      <div class="cl-item-body">
+        <label for="cl-cb-${i}">${i + 1}. ${q.text}</label>
+        <ul class="cl-sub-list">${subHtml}</ul>
+      </div>
+    </li>`;
+}
+
 function buildPanel() {
   injectStyles();
 
@@ -179,12 +232,7 @@ function buildPanel() {
   panel.setAttribute('role', 'dialog');
   panel.setAttribute('aria-label', 'Review checklist');
 
-  const items = QUESTIONS.map((q, i) => `
-    <li class="cl-item" id="cl-item-${i}">
-      <input type="checkbox" id="cl-cb-${i}" onchange="toggleItem(${i})">
-      <label for="cl-cb-${i}">${i + 1}. ${q}</label>
-    </li>
-  `).join('');
+  const items = QUESTIONS.map(renderItem).join('');
 
   panel.innerHTML = `
     <div class="cl-header">
@@ -210,10 +258,43 @@ function toggleItem(i) {
   item.classList.toggle('cl-checked', cb.checked);
 }
 
-function resetChecklist() {
-  QUESTIONS.forEach((_, i) => {
-    document.getElementById('cl-cb-' + i).checked = false;
+// Called when a sub-item checkbox changes. Enables the parent checkbox once
+// at least one sub-item is checked; disables it again if all are unchecked.
+function toggleSubItem(i, j) {
+  const subItem = document.getElementById('cl-sub-item-' + i + '-' + j);
+  const subCb = document.getElementById('cl-sub-' + i + '-' + j);
+  subItem.classList.toggle('cl-sub-checked', subCb.checked);
+
+  // Count how many sub-items are checked
+  const q = QUESTIONS[i];
+  const anyChecked = q.subItems.some((_, k) =>
+    document.getElementById('cl-sub-' + i + '-' + k).checked
+  );
+
+  const parentCb = document.getElementById('cl-cb-' + i);
+  parentCb.disabled = !anyChecked;
+
+  // If all sub-items are unchecked, also uncheck and un-strike the parent
+  if (!anyChecked) {
+    parentCb.checked = false;
     document.getElementById('cl-item-' + i).classList.remove('cl-checked');
+  }
+}
+
+function resetChecklist() {
+  QUESTIONS.forEach((q, i) => {
+    const cb = document.getElementById('cl-cb-' + i);
+    cb.checked = false;
+    document.getElementById('cl-item-' + i).classList.remove('cl-checked');
+
+    // Reset sub-items if present
+    if (q && typeof q === 'object' && q.subItems) {
+      cb.disabled = true;
+      q.subItems.forEach((_, j) => {
+        document.getElementById('cl-sub-' + i + '-' + j).checked = false;
+        document.getElementById('cl-sub-item-' + i + '-' + j).classList.remove('cl-sub-checked');
+      });
+    }
   });
 }
 
