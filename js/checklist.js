@@ -7,7 +7,7 @@
 const QUESTIONS = [
   'Is the verbiage clear?',
   'What RCWs are relevant, and is this article in line?',
-  'Does this protect the membership, the board as an institution, or the assets of the corporation?',
+  'Does this protect: <span class="cl-sub-list"><span class="cl-sub-item">Members</span><span class="cl-sub-item">Organization</span><span class="cl-sub-item">Assets</span></span>',
   'Are the processes repeatable, and do they support board transition over time?',
   'Is this something that should be easy to change, or difficult to change?',
   'Does this incur responsibility on an officer or agent? Does there need to be a backstop?',
@@ -117,6 +117,26 @@ function injectStyles() {
     .cl-item.cl-checked label {
       color: #9ca3af !important;
       text-decoration: line-through !important;
+    }
+    .cl-sub-list {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 0.2rem !important;
+      margin-top: 0.35rem !important;
+    }
+    .cl-sub-item {
+      display: flex !important;
+      align-items: center !important;
+      gap: 0.4rem !important;
+    }
+    .cl-sub-item::before {
+      content: '' !important;
+      display: inline-block !important;
+      width: 0.75rem !important;
+      height: 0.75rem !important;
+      border: 1px solid #9ca3af !important;
+      border-radius: 2px !important;
+      flex-shrink: 0 !important;
     }
     .cl-footer {
       padding: 0.75rem 1.25rem;
