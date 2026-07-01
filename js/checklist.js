@@ -46,6 +46,7 @@ function injectStyles() {
 
     #checklist-panel {
       position: fixed !important;
+      top: auto !important;
       bottom: 0 !important;
       left: 0 !important;
       height: auto !important;
