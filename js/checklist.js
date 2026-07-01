@@ -46,9 +46,10 @@ function injectStyles() {
 
     #checklist-panel {
       position: fixed !important;
-      top: 0 !important;
+      bottom: 0 !important;
       left: 0 !important;
-      height: 100% !important;
+      height: auto !important;
+      max-height: calc(100vh - 2rem) !important;
       width: 320px !important;
       max-width: 100vw !important;
       background: white !important;
