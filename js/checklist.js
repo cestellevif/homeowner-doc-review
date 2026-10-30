@@ -248,10 +248,47 @@ function buildPanel() {
     </div>
   `;
   document.body.appendChild(panel);
+  makeDraggable(panel);
 }
 
 function toggleChecklist() {
-  document.getElementById('checklist-panel').classList.toggle('cl-open');
+  const panel = document.getElementById('checklist-panel');
+  // If panel was dragged (has explicit positioning), just toggle visibility
+  if (panel.style.left) {
+    panel.style.display = panel.style.display === 'none' ? 'flex' : 'none';
+    return;
+  }
+  panel.classList.toggle('cl-open');
+}
+
+// Make the checklist panel draggable by its header.
+// After first drag, panel switches from slide-in CSS to free top/left positioning.
+function makeDraggable(panel) {
+  const header = panel.querySelector('.cl-header');
+  let dragging = false, ox = 0, oy = 0;
+
+  header.style.cursor = 'grab';
+
+  header.addEventListener('mousedown', (e) => {
+    const r = panel.getBoundingClientRect();
+    // Detach from CSS slide-in anchor — switch to free positioning
+    panel.style.cssText += `bottom:auto;left:${r.left}px;top:${r.top}px;transform:none;transition:none;`;
+    ox = e.clientX - r.left;
+    oy = e.clientY - r.top;
+    dragging = true;
+    header.style.cursor = 'grabbing';
+    e.preventDefault();
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (!dragging) return;
+    panel.style.left = `${e.clientX - ox}px`;
+    panel.style.top  = `${e.clientY - oy}px`;
+  });
+
+  document.addEventListener('mouseup', () => {
+    if (dragging) { dragging = false; header.style.cursor = 'grab'; }
+  });
 }
 
 function toggleItem(i) {

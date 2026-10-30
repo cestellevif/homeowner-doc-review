@@ -227,6 +227,106 @@
   line-height: 1.5;
 }
 
+/* ─── Clause Block: 3-column on-demand layout ────────────────────────────────
+ * Wraps each clause card. Normally shows: [22px tab strip | 2-col card].
+ * When .orig-open: expands to [orig panel | tab strip | 2-col card] using
+ * the px-6 page gutters (margin-left: -1.5rem, width: calc(100% + 3rem)).
+ * Mobile: orig-col overlays as a slide-over instead of expanding.
+ */
+.clause-block {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0fr auto 1fr;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.1);
+  transition: grid-template-columns 0.3s ease, margin-left 0.3s ease, width 0.3s ease;
+}
+.clause-block.orig-open {
+  grid-template-columns: 1fr auto 2fr;
+}
+@media (min-width: 768px) {
+  .clause-block.orig-open {
+    /* Break out into the px-6 gutters of the parent container */
+    margin-left: -1.5rem;
+    width: calc(100% + 3rem);
+  }
+}
+
+/* Original language panel — starts at 0 width, animates open */
+.orig-col {
+  overflow: hidden;
+  background: #fffbeb;
+  border-right: 1px solid #fde68a;
+}
+.orig-col-inner {
+  padding: 1.5rem;
+  min-width: 220px; /* ponytail: prevents text collapse during grid-fr animation */
+}
+
+/* Mobile: orig-col overlays the clause-main instead of pushing it */
+@media (max-width: 767px) {
+  .clause-block.orig-open {
+    /* Don't do margin breakout on mobile */
+    margin-left: 0 !important;
+    width: 100% !important;
+    grid-template-columns: 0fr auto 1fr !important;
+  }
+  .clause-block .orig-col {
+    display: none;
+  }
+  .clause-block.orig-open .orig-col {
+    display: block;
+    position: absolute;
+    left: 22px;
+    top: 0;
+    width: calc(100% - 22px);
+    height: 100%;
+    z-index: 10;
+    overflow-y: auto;
+    box-shadow: 4px 0 12px rgba(0,0,0,0.15);
+  }
+}
+
+/* Amber tab strip — always visible 22px strip on left of revised language */
+.orig-tab-strip {
+  background: #fef9c3;
+  border: none;
+  border-right: 1px solid #fde68a;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  padding: 0;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.orig-tab-strip:hover {
+  background: #fef08a;
+}
+.orig-tab-strip[aria-expanded="true"] {
+  background: #fde68a;
+}
+.orig-tab-strip span {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #92400e;
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* clause-main: the inner 2-column grid, now a child of .clause-block */
+.clause-main {
+  min-width: 0; /* prevents grid blowout */
+}
+
+/* ─── Defined-term tooltips */
 /* Defined-term tooltips */
 .term {
   border-bottom: 1px dashed #14b8a6;
