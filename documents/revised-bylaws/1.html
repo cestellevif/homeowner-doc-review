@@ -25,7 +25,13 @@
   <main class="max-w-6xl mx-auto px-6 py-10 space-y-6">
 
     <!-- Section 1.1 -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+    <div class="clause-block">
+      <div class="orig-col"><div class="orig-col-inner">
+        <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">Sound Legal — Original</p>
+        <p class="text-gray-700 leading-relaxed text-sm">Section 1.1 Class of Members. The qualifications and class of members are set forth in the Declaration.</p>
+      </div></div>
+      <button class="orig-tab-strip" onclick="toggleOrig(this.closest('.clause-block'))" aria-expanded="false" aria-label="Toggle Sound Legal original language"><span>Sound Legal</span></button>
+      <div class="clause-main grid grid-cols-1 md:grid-cols-2 gap-0">
       <div class="bg-white p-6 relative border-r border-gray-200">
         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Section 1.1 — Members</p>
         <p class="text-gray-800 leading-relaxed"><strong>Members shall consist of all persons and entities who now or hereafter own one or more lots within the area of jurisdiction of the association.</strong></p>
@@ -36,11 +42,26 @@
       <div class="bg-slate-50 p-6">
         <p class="text-xs font-semibold text-teal-600 uppercase tracking-wide mb-2">What Changed &amp; Why</p>
         <p class="text-gray-700 leading-relaxed">This entire sentence is new. The current declaration does not define who counts as a member. This revision puts the definition directly in the bylaws, where voting rules also live — so members can find the answer in one document. Who qualifies is unchanged: if you own a lot, you're a member.</p>
+        <button class="history-tab" aria-expanded="false"
+          onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); this.nextElementSibling.hidden = !this.nextElementSibling.hidden;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          Proposed Language
+        </button>
+        <div class="history-content" hidden>
+          <p>Proposed language will be added here.</p>
+        </div>
       </div>
+    </div>
     </div>
 
     <!-- Section 1.2 -->
-    <div id="s1-2" class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+    <div id="s1-2" class="clause-block">
+      <div class="orig-col"><div class="orig-col-inner">
+        <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">Sound Legal — Original</p>
+        <p class="text-gray-700 leading-relaxed text-sm">Section 1.2 Members. Each Owner of a Unit is a member of the Association and shall be entitled to one membership for each Unit owned, with voting rights set forth in the Declaration and Article 2 of these Bylaws. Corporations, partnerships, associations, and other legal entities, trustees under an express trust, and other fiduciaries, as well as natural persons may be members of the Association. Persons who claim to be members of the Association shall, upon request, furnish the Board with certified copies of documents evidencing ownership of a Unit or any interest therein.</p>
+      </div></div>
+      <button class="orig-tab-strip" onclick="toggleOrig(this.closest('.clause-block'))" aria-expanded="false" aria-label="Toggle Sound Legal original language"><span>Sound Legal</span></button>
+      <div class="clause-main grid grid-cols-1 md:grid-cols-2 gap-0">
       <div class="bg-white p-6 relative border-r border-gray-200">
         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Section 1.2 — Members</p>
         <p class="text-gray-800 leading-relaxed mb-3">(a) Each Member of a Lot is a member of the Association and shall be entitled to one membership for each Lot owned, with voting rights <strong>as described in <a href="2.html" target="_blank" rel="noopener" class="text-teal-600 hover:underline">Article 2</a></strong>. Corporations, partnerships, associations, and other legal entities, trustees under an express trust, and other fiduciaries, as well as natural persons may be members of the Association.</p>
@@ -65,11 +86,26 @@
           <p>During the 2025 Lakemoor board election, a neighbor who had lived in the community for decades became a candidate. A question arose about whether their ownership was correctly recorded with the county. Under the current bylaws, there is no cure period — a member can be immediately blocked from voting or running for office the moment a documentation question is raised, with no opportunity to correct the record first.</p>
           <p style="margin-top:0.625rem;">This neighbor's participation was challenged on those grounds. A 30-day window like the one in Section 1.2(c) would have allowed them to resolve the paperwork while remaining eligible to participate — protecting a decades-long community member from being abruptly shut out over a documentation gap.</p>
         </div>
+        <button class="history-tab" aria-expanded="false"
+          onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); this.nextElementSibling.hidden = !this.nextElementSibling.hidden;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          Proposed Language
+        </button>
+        <div class="history-content" hidden>
+          <p>Proposed language will be added here.</p>
+        </div>
       </div>
+    </div>
     </div>
 
     <!-- Section 1.3 -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+    <div class="clause-block">
+      <div class="orig-col"><div class="orig-col-inner">
+        <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">Sound Legal — Original</p>
+        <p class="text-gray-700 leading-relaxed text-sm">Section 1.3 Persons Under Disability. Minors or persons declared legally incompetent shall be eligible for membership in the Association, if otherwise qualified, but shall not be permitted to vote except through a legally appointed, qualified and acting guardian of their estate, voting on their behalf, or in the case of a minor with no legal guardian of his estate, through a parent having custody of the minor.</p>
+      </div></div>
+      <button class="orig-tab-strip" onclick="toggleOrig(this.closest('.clause-block'))" aria-expanded="false" aria-label="Toggle Sound Legal original language"><span>Sound Legal</span></button>
+      <div class="clause-main grid grid-cols-1 md:grid-cols-2 gap-0">
       <div class="bg-white p-6 relative border-r border-gray-200">
         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Section 1.3 — Persons Under Disability</p>
         <p class="text-gray-800 leading-relaxed">Minors or <strong>legally incompetent</strong> persons shall be eligible for membership in the Association, if otherwise qualified, but shall not be permitted to vote except through a <strong>legally appointed guardian of their estate</strong>, or in the case of a minor with <strong>no guardian</strong>, through a parent having custody of the minor.</p>
@@ -80,11 +116,26 @@
       <div class="bg-slate-50 p-6">
         <p class="text-xs font-semibold text-teal-600 uppercase tracking-wide mb-2">What Changed &amp; Why</p>
         <p class="text-gray-700 leading-relaxed">Language simplified throughout. "Persons declared legally incompetent" is shortened to "legally incompetent persons." The guardian description drops "qualified and acting" and "voting on their behalf" as redundant. Gendered language ("his estate") is removed. The rights protected are identical — minors and legally incompetent members can still participate through a guardian or custodial parent.</p>
+        <button class="history-tab" aria-expanded="false"
+          onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); this.nextElementSibling.hidden = !this.nextElementSibling.hidden;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          Proposed Language
+        </button>
+        <div class="history-content" hidden>
+          <p>Proposed language will be added here.</p>
+        </div>
       </div>
+    </div>
     </div>
 
     <!-- Section 1.4 -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+    <div class="clause-block">
+      <div class="orig-col"><div class="orig-col-inner">
+        <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">Sound Legal — Original</p>
+        <p class="text-gray-700 leading-relaxed text-sm">Section 1.4 Registration of Owners. The Board shall cause a register to be kept containing the names and addresses of all members of the Association and other information the Board deems necessary. Persons who acquire ownership interest in a Unit shall promptly inform the Board. If a Unit is owned by a business, trust, estate, or similar legal entity, it shall provide copies of its organizational documents sufficient for the Association to verify ownership interests and individuals with authority to bind the entity. Notice required under the Act or Association's governing documents to Owners shall be sent to the Unit address unless an Owner notifies the Association in writing of an alternate address. An Owner may notify the Association of an electronic address that may, at the Board's discretion, be used for purpose of notice in addition to or in lieu of notice to a mailing address. Except to the extent required by the Act or Declaration, the Association is not required to give owners notice by more than one method or to more than one address. Notice to occupants, to the extent required by the Declaration or Act, shall be the Unit address unless the occupants have requested in writing that notices be sent to an alternate address.</p>
+      </div></div>
+      <button class="orig-tab-strip" onclick="toggleOrig(this.closest('.clause-block'))" aria-expanded="false" aria-label="Toggle Sound Legal original language"><span>Sound Legal</span></button>
+      <div class="clause-main grid grid-cols-1 md:grid-cols-2 gap-0">
       <div class="bg-white p-6 relative border-r border-gray-200">
         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Section 1.4 — Registration of Members</p>
         <p class="text-gray-800 leading-relaxed mb-3">The Board shall cause a register to be kept containing the names and addresses of all members of the Association and other information the Board deems necessary. <strong>Persons who acquire an ownership interest shall promptly inform the Board.</strong></p>
@@ -100,7 +151,16 @@
         <p class="text-gray-700 leading-relaxed mb-3">Second, notice requirements have been moved out of this section. Notice required under the Act or the Association's governing documents to Members shall be sent in accordance with Article <a href="11.html" class="text-teal-600 hover:underline">[Notices]</a> of these bylaws.</p>
         <p class="text-gray-700 leading-relaxed"><strong>Removed:</strong> The paragraph requiring businesses, trusts, estates, and other legal entities to provide organizational documents to verify ownership. This requirement is addressed through <a href="#s1-2" class="text-teal-600 hover:underline">Section 1.2(b)</a>'s documentation process instead.</p>
 
+        <button class="history-tab" aria-expanded="false"
+          onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); this.nextElementSibling.hidden = !this.nextElementSibling.hidden;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          Proposed Language
+        </button>
+        <div class="history-content" hidden>
+          <p>Proposed language will be added here.</p>
+        </div>
       </div>
+    </div>
     </div>
 
   </main>
@@ -119,6 +179,7 @@
   </div>
   <script src="../../js/modal.js"></script>
   <script src="../../js/terms.js"></script>
+  <script src="../../js/source-tabs.js"></script>
   <script src="../../js/checklist.js"></script>
 
 </body>

@@ -25,7 +25,13 @@
   <main class="max-w-6xl mx-auto px-6 py-10 space-y-6">
 
     <!-- Purpose -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+    <div class="clause-block">
+      <div class="orig-col"><div class="orig-col-inner">
+        <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">Sound Legal — Original</p>
+        <p class="text-gray-700 leading-relaxed text-sm">New addition — no equivalent in the Sound Legal revision. See committee notes for what changed and why.</p>
+      </div></div>
+      <button class="orig-tab-strip" onclick="toggleOrig(this.closest('.clause-block'))" aria-expanded="false" aria-label="Toggle Sound Legal original language"><span>Sound Legal</span></button>
+      <div class="clause-main grid grid-cols-1 md:grid-cols-2 gap-0">
       <div class="bg-white p-6 relative border-r border-gray-200">
         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Purpose</p>
         <p class="text-gray-800 leading-relaxed">To establish effective collaboration with LCC committees and promote community engagement that improves outcomes for the Association.</p>
@@ -36,11 +42,26 @@
       <div class="bg-slate-50 p-6">
         <p class="text-xs font-semibold text-teal-600 uppercase tracking-wide mb-2">What Changed &amp; Why</p>
         <p class="text-gray-700 leading-relaxed">This is new. The previous version of Article V had no purpose clause. Borrowing from Montpelier's city code convention, a purpose clause guides interpretation of everything that follows. If a future board or court needs to decide what a committee rule means, this sentence tells them the point: committees exist to engage the community and improve outcomes, not to concentrate authority.</p>
+        <button class="history-tab" aria-expanded="false"
+          onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); this.nextElementSibling.hidden = !this.nextElementSibling.hidden;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          Proposed Language
+        </button>
+        <div class="history-content" hidden>
+          <p>Proposed language will be added here.</p>
+        </div>
       </div>
+    </div>
     </div>
 
     <!-- Section 5.1 -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+    <div class="clause-block">
+      <div class="orig-col"><div class="orig-col-inner">
+        <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">Sound Legal — Original</p>
+        <p class="text-gray-700 leading-relaxed text-sm">Section 5.1 Committees of the Board. The Board may appoint one or more committees comprised of two or more Directors to assist the Board in carrying out the Association's business. Except as prohibited under RCW 24.03A.575 or other applicable law, Committees of the Board may act with full force of the Board to the extent set forth in the meeting minutes or resolution creating the committee. Committees of the Board shall not be created with the intent of excluding Directors from participating in issues of importance where certain Directors, despite holding different opinions, wish to participate, except as may be appropriate to address matters involving a Director's conflict of interest or status as an opposing party with the Association in active or potential litigation. The Board may appoint and administer any committees called for by the Declaration. The appointment of any such committee shall not relieve the Board of its ultimate responsibility for the administration and management of the Association. Unless agreed to otherwise in the meeting minutes or resolution establishing the Committee of the Board, decisions made by a Committee of the Board shall promptly be conveyed to the entire Board, and Committees of the Board shall maintain written records of decisions that shall be kept with the Association's records.</p>
+      </div></div>
+      <button class="orig-tab-strip" onclick="toggleOrig(this.closest('.clause-block'))" aria-expanded="false" aria-label="Toggle Sound Legal original language"><span>Sound Legal</span></button>
+      <div class="clause-main grid grid-cols-1 md:grid-cols-2 gap-0">
       <div class="bg-white p-6 relative border-r border-gray-200">
         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Section 5.1 — Committees of the Board</p>
         <p class="text-gray-800 leading-relaxed mb-3">The Board may appoint one or more committees, each composed of two or more Directors to assist the Board in carrying out the Association's business. Except as prohibited under RCW 24.03A.575 or other applicable law, Committees of the Board may act with full force of the Board to the extent set forth in the resolution creating the committee. Committees of the Board may be dissolved by resolution of the Board.</p>
@@ -57,11 +78,26 @@
         <p class="text-gray-700 leading-relaxed mb-3"><strong>New: accountability stays with the Board.</strong> "The appointment of any committee shall not relieve the Board of its ultimate responsibility" is standard nonprofit governance doctrine. You can delegate the work, but not the accountability. This matters when things go wrong — the full Board can't point at a committee and say "that was their call."</p>
         <p class="text-gray-700 leading-relaxed mb-3"><strong>New: advisory-role members on Board committees.</strong> Non-director members or agents can now participate in an advisory capacity, but only Directors vote. This opens the door to community expertise without crossing the legal line in RCW 24.03A.575, which prohibits non-directors from voting on Board committee matters.</p>
         <p class="text-gray-700 leading-relaxed"><strong>New: 7-day reporting requirement.</strong> Previously, decisions just had to be "promptly conveyed." Now there's a specific deadline — 7 days, in writing, to the Secretary — and decisions must be kept with Association records. This creates a paper trail that any member can later inspect.</p>
+        <button class="history-tab" aria-expanded="false"
+          onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); this.nextElementSibling.hidden = !this.nextElementSibling.hidden;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          Proposed Language
+        </button>
+        <div class="history-content" hidden>
+          <p>Proposed language will be added here.</p>
+        </div>
       </div>
+    </div>
     </div>
 
     <!-- Section 5.2 -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+    <div class="clause-block">
+      <div class="orig-col"><div class="orig-col-inner">
+        <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">Sound Legal — Original</p>
+        <p class="text-gray-700 leading-relaxed text-sm">Section 5.2 Advisory Committees. Advisory Committees, not having or exercising the authority of the Board in the management of the Association, may be appointed by the President or the Directors, and such committees may be composed of at least one or more Owner of the Association. Unless prohibited in the meeting minutes or resolution establishing an Advisory Committee, any privilege under the law that would apply to a Director shall also extend to an Advisory Committee member. Notwithstanding anything to the contrary herein, an Advisory Committee member may not exercise any powers of the Board of Directors.</p>
+      </div></div>
+      <button class="orig-tab-strip" onclick="toggleOrig(this.closest('.clause-block'))" aria-expanded="false" aria-label="Toggle Sound Legal original language"><span>Sound Legal</span></button>
+      <div class="clause-main grid grid-cols-1 md:grid-cols-2 gap-0">
       <div class="bg-white p-6 relative border-r border-gray-200">
         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Section 5.2 — Advisory Committees</p>
         <p class="text-gray-800 leading-relaxed mb-3">Advisory Committees may be established by resolution of the Directors.</p>
@@ -80,11 +116,26 @@
         <p class="text-gray-700 leading-relaxed mb-3"><strong>New: up to 3 named members with legal privileges.</strong> The Board may appoint up to three members (including the chair) who receive the same legal protections that apply to Directors — likely qualified immunity and indemnification. These members must be in good standing and named in the resolution. This protects the volunteers who do the actual work of committees.</p>
         <p class="text-gray-700 leading-relaxed mb-3"><strong>New: open to any resident.</strong> The previous version said "at least one or more Member." Now participation is explicitly open to any resident of Lakemoor Community Club — a broader invitation to get involved. This is the on-ramp: anyone who cares enough to show up can participate.</p>
         <p class="text-gray-700 leading-relaxed"><strong>New: dissolution clause.</strong> Like Board committees, advisory committees can now be dissolved by Board resolution. Clear start, clear end.</p>
+        <button class="history-tab" aria-expanded="false"
+          onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); this.nextElementSibling.hidden = !this.nextElementSibling.hidden;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          Proposed Language
+        </button>
+        <div class="history-content" hidden>
+          <p>Proposed language will be added here.</p>
+        </div>
       </div>
+    </div>
     </div>
 
     <!-- Section 5.3 -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+    <div class="clause-block">
+      <div class="orig-col"><div class="orig-col-inner">
+        <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">Sound Legal — Original</p>
+        <p class="text-gray-700 leading-relaxed text-sm">Section 5.3 Committee Procedure. For meetings and actions taken by Committees authorized to act for the Board, the Committee must comply with Section 3.15 above and other notice and operational procedures the same as if a meeting of the Committee was a meeting of the Board.</p>
+      </div></div>
+      <button class="orig-tab-strip" onclick="toggleOrig(this.closest('.clause-block'))" aria-expanded="false" aria-label="Toggle Sound Legal original language"><span>Sound Legal</span></button>
+      <div class="clause-main grid grid-cols-1 md:grid-cols-2 gap-0">
       <div class="bg-white p-6 relative border-r border-gray-200">
         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Section 5.3 — Committee Procedure</p>
         <p class="text-gray-800 leading-relaxed mb-3">Committees of the Board must comply with <a href="3.html#s3-15" target="_blank" rel="noopener" class="text-teal-600 hover:underline">Section 3.15</a> above and other notice and operational procedures as if a meeting of the Committee was a meeting of the Board.</p>
@@ -100,11 +151,26 @@
         <p class="text-gray-700 leading-relaxed mb-3"><strong>New: advisory committees are explicitly exempt from Section 3.15.</strong> This is intentional. Advisory committees are where the community's working committees sit. Requiring them to follow the full Board meeting protocol would create friction that discourages participation. The chair can run meetings in the way that actually gets work done.</p>
         <p class="text-gray-700 leading-relaxed mb-3"><strong>New: comply-or-explain rule.</strong> This is the heart of the volunteer protection. When an advisory committee submits a recommendation, the Board must put it on the next agenda and record what they did with it — adopted, rejected, or deferred — with a reason. The Board doesn't have to agree, but they cannot ignore the work. A board that chooses not to follow a researched recommendation has to explain why, and both compliance and a substantiated explanation count as valid responses.</p>
         <p class="text-gray-700 leading-relaxed"><strong>Why this matters for engagement:</strong> If the Board creates a committee and then ignores its output, volunteers stop volunteering. This rule ensures that the work of committees is acknowledged and responded to on the record. It's how you build the engagement pipeline that produces experienced future leaders — people need to see that their contribution matters before they'll step into larger roles. The Secretary's log makes the pattern visible to all members over time.</p>
+        <button class="history-tab" aria-expanded="false"
+          onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); this.nextElementSibling.hidden = !this.nextElementSibling.hidden;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          Proposed Language
+        </button>
+        <div class="history-content" hidden>
+          <p>Proposed language will be added here.</p>
+        </div>
       </div>
+    </div>
     </div>
 
     <!-- Section 5.4 -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+    <div class="clause-block">
+      <div class="orig-col"><div class="orig-col-inner">
+        <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">Sound Legal — Original</p>
+        <p class="text-gray-700 leading-relaxed text-sm">Section 5.4 Architectural Control Committee. As may be required or allowed by Declaration Article VII, the Architectural Control Committee ("ACC") shall be comprised of three (3) Directors serving for three (3) year terms. The Board may alter the terms of the ACC members so that their terms are staggered. The removal or resignation of any ACC member from the Board will automatically serve as resignation from the ACC. ACC decisions shall be determined by a majority vote by the members of the ACC and subject to appeal procedures set forth in the Declaration.</p>
+      </div></div>
+      <button class="orig-tab-strip" onclick="toggleOrig(this.closest('.clause-block'))" aria-expanded="false" aria-label="Toggle Sound Legal original language"><span>Sound Legal</span></button>
+      <div class="clause-main grid grid-cols-1 md:grid-cols-2 gap-0">
       <div class="bg-white p-6 relative border-r border-gray-200">
         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Section 5.4 — Architectural Control Committee</p>
         <p class="text-gray-800 leading-relaxed mb-3">As required by Declaration Article VII, the Architectural Control Committee ("ACC") shall be composed of three (3) Directors serving for three (3) year terms.</p>
@@ -119,7 +185,16 @@
         <p class="text-gray-700 leading-relaxed mb-3">Two targeted changes, both about continuity and legal precision.</p>
         <p class="text-gray-700 leading-relaxed mb-3"><strong>Clarified: "Director members" for voting.</strong> The previous version said "majority vote by the members of the ACC," which was ambiguous — it could be read to include non-director participants. The updated text says "Director members of the ACC," making clear that only Directors vote. This aligns with RCW 24.03A.575(1), which prohibits non-director voting members on Board-authority committees.</p>
         <p class="text-gray-700 leading-relaxed"><strong>New: up to 3 advisory-role members.</strong> The ACC can now include non-director members in advisory roles. This solves a practical problem: when ACC directors leave the Board, institutional knowledge walks out with them. Advisory members provide continuity across election cycles without violating the statutory requirement that only Directors hold voting power. The appeal procedure remains with the Declaration, avoiding any conflict between the two documents.</p>
+        <button class="history-tab" aria-expanded="false"
+          onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); this.nextElementSibling.hidden = !this.nextElementSibling.hidden;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          Proposed Language
+        </button>
+        <div class="history-content" hidden>
+          <p>Proposed language will be added here.</p>
+        </div>
       </div>
+    </div>
     </div>
 
   </main>
@@ -138,6 +213,7 @@
   </div>
   <script src="../../js/modal.js"></script>
   <script src="../../js/terms.js"></script>
+  <script src="../../js/source-tabs.js"></script>
   <script src="../../js/checklist.js"></script>
 
 </body>

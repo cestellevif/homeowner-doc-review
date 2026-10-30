@@ -25,7 +25,13 @@
   <main class="max-w-6xl mx-auto px-6 py-10 space-y-6">
 
     <!-- 2.1 -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+    <div class="clause-block">
+      <div class="orig-col"><div class="orig-col-inner">
+        <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">Sound Legal — Original</p>
+        <p class="text-gray-700 leading-relaxed text-sm">Section 2.1 Place &amp; Electronic Communication Equipment (Owner Meetings). All Owner meetings of the Association shall be held at any reasonable place determined by the Board. Meetings may be conducted by telephonic, video, or other conferencing process ("Electronic Meeting"), if: (a) the meeting notice states the conferencing process to be used and provides information explaining how Owners may participate; (b) the process provides participants the opportunity to hear or perceive the discussion and to comment; and (c) any person entitled to participate is given the option of participating by telephone. At an Electronic Meeting of the Owners, the Board may temporarily mute Owners only to the extent necessary to maintain order. A vote of the Owners present at an Electronic Meeting is required to permanently mute or remove an Owner.</p>
+      </div></div>
+      <button class="orig-tab-strip" onclick="toggleOrig(this.closest('.clause-block'))" aria-expanded="false" aria-label="Toggle Sound Legal original language"><span>Sound Legal</span></button>
+      <div class="clause-main grid grid-cols-1 md:grid-cols-2 gap-0">
       <div class="bg-white p-6 relative border-r border-gray-200">
         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Section 2.1 — Place &amp; Electronic Communication Equipment (Member Meetings)</p>
         <p class="text-gray-800 leading-relaxed">All Member meetings of the Association shall be held at any reasonable place determined by the Board. Meetings may be conducted by telephonic, video, or other conferencing process ("Electronic Meeting"), if: (a) the meeting notice states the conferencing process to be used and provides information explaining how Members may participate in the Electronic Meeting; (b) the process provides participants the opportunity to hear or perceive the discussion and to comment; and (c) any person entitled to participate in the meeting is given the option of participating by telephone. At an Electronic Meeting of the Members, the chair may temporarily mute Members only to the extent necessary to maintain order at the meeting. A vote of the Members present at an Electronic Meeting of the Members is required to permanently mute or remove a Member.</p>
@@ -36,11 +42,26 @@
       <div class="bg-slate-50 p-6">
         <p class="text-xs font-semibold text-teal-600 uppercase tracking-wide mb-2">What Changed &amp; Why</p>
         <p class="text-gray-700 leading-relaxed">No changes proposed to this section. Electronic meetings remain authorized with three conditions: notice of the process, two-way participation, and a telephone option. Permanent muting or removal still requires a vote of members present — not a unilateral board decision.</p>
+        <button class="history-tab" aria-expanded="false"
+          onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); this.nextElementSibling.hidden = !this.nextElementSibling.hidden;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          Proposed Language
+        </button>
+        <div class="history-content" hidden>
+          <p>Proposed language will be added here.</p>
+        </div>
       </div>
+    </div>
     </div>
 
     <!-- 2.2 -->
-    <div id="s2-2" class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+    <div id="s2-2" class="clause-block">
+      <div class="orig-col"><div class="orig-col-inner">
+        <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">Sound Legal — Original</p>
+        <p class="text-gray-700 leading-relaxed text-sm">Section 2.2 Voting Rights. Owners have such voting rights as are set forth in the Declaration, and each Unit shall be entitled to a single vote in the Association and may not be cast as fractional votes. The weight of the vote shall be the percentage set forth in the Declaration, or in the absence of such a percentage, one divided by the total number of Units in the Association. If only one of several Owners of a Unit casts a vote at a meeting, that vote must be counted as casting all votes allocated to the Unit. If more than one Owner casts a vote for a Unit and the votes are not identical, no vote from any Owner of the Unit may be counted. If an Owner who signed an absentee ballot or proxy in advance of a meeting attends the meeting, the absentee ballot or proxy shall be deemed revoked. In any vote of the Owners, votes allocated to a Unit owned by the Association must be cast in the same proportion as the votes cast on the matter by Unit Owners other than the Association.</p>
+      </div></div>
+      <button class="orig-tab-strip" onclick="toggleOrig(this.closest('.clause-block'))" aria-expanded="false" aria-label="Toggle Sound Legal original language"><span>Sound Legal</span></button>
+      <div class="clause-main grid grid-cols-1 md:grid-cols-2 gap-0">
       <div class="bg-white p-6 relative border-r border-gray-200">
         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Section 2.2 — Voting Rights</p>
         <p class="text-gray-800 leading-relaxed mb-3">Members have such voting rights as are set forth in the Declaration, and each Lot shall be entitled to a single vote in the Association and may not be cast as fractional votes. The weight of the vote shall be the percentage set forth in the Declaration, or in the absence of such a percentage, one divided by the total number of Lots in the Association.</p>
@@ -64,11 +85,26 @@
           <p>During the 2025 Lakemoor election, voting was extended and members could submit an electronic ballot in advance or vote in person on election day. Because both methods were open at the same time, some members did both — submitting an electronic ballot and then also voting in person.</p>
           <p style="margin-top:0.625rem;">This was not an attempt to vote twice. Members simply weren't sure whether their earlier ballot had been received, or they changed their mind. Under the "last vote received counts" rule in this section, that's fine — the in-person vote simply supersedes the earlier electronic one, and only one vote per lot is counted. The rule converts what could be a disqualifying error into a non-issue.</p>
         </div>
+        <button class="history-tab" aria-expanded="false"
+          onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); this.nextElementSibling.hidden = !this.nextElementSibling.hidden;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          Proposed Language
+        </button>
+        <div class="history-content" hidden>
+          <p>Proposed language will be added here.</p>
+        </div>
       </div>
+    </div>
     </div>
 
     <!-- 2.3 -->
-    <div id="s2-3" class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+    <div id="s2-3" class="clause-block">
+      <div class="orig-col"><div class="orig-col-inner">
+        <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">Sound Legal — Original</p>
+        <p class="text-gray-700 leading-relaxed text-sm">Section 2.3 Voting Methods at a Meeting. Owners or their proxies who are present in person at a meeting of the members may vote by voice vote, show of hands, standing, written ballot, or any other method for determining the votes of Owners, as designated by the chairperson. If and only if the Association is fully bound by RCW 64.90, the following votes of Unit Owners shall be conducted by secret ballot: (a) election of Directors; (b) removal of Directors; and (c) amendments to the Declaration or other governing documents. Secret ballots shall not be opened or reviewed prior to commencement of the meeting, and the counting of secret ballots for election or removal of a Director may not be conducted by any person whose position on the board is at stake.</p>
+      </div></div>
+      <button class="orig-tab-strip" onclick="toggleOrig(this.closest('.clause-block'))" aria-expanded="false" aria-label="Toggle Sound Legal original language"><span>Sound Legal</span></button>
+      <div class="clause-main grid grid-cols-1 md:grid-cols-2 gap-0">
       <div class="bg-white p-6 relative border-r border-gray-200">
         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Section 2.3 — Voting Methods &amp; Secret Ballot</p>
         <p class="text-gray-800 leading-relaxed mb-3">Members or their proxies who are present in person at a meeting of the members may vote by voice vote, show of hands, standing, written ballot, or any other method for determining the votes of Members, as designated by the chairperson.</p>
@@ -82,11 +118,26 @@
         <p class="text-gray-700 leading-relaxed mb-3"><strong>Secret ballot made unconditional.</strong> The current bylaws require secret ballots only "if and only if the Association is fully bound by RCW 64.90." That conditional has been removed. Elections, removals, and amendments now always use secret ballot — regardless of WUCIOA status. SB 5796 (effective 2024/2028) already requires this; the revision gets us into compliance now.</p>
         <p class="text-gray-700 leading-relaxed mb-3"><strong>Board agent administers ballots.</strong> Ballot counting and certification now belongs to the management company (the "board agent"), not the board itself.</p>
         <p class="text-gray-700 leading-relaxed"><strong>Broader access restriction.</strong> The current bylaws only bar people "whose position is at stake" from counting. This revision bars all board members, candidates, and contractors with any personal interest from handling or accessing ballots.</p>
+        <button class="history-tab" aria-expanded="false"
+          onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); this.nextElementSibling.hidden = !this.nextElementSibling.hidden;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          Proposed Language
+        </button>
+        <div class="history-content" hidden>
+          <p>Proposed language will be added here.</p>
+        </div>
       </div>
+    </div>
     </div>
 
     <!-- 2.4 -->
-    <div id="s2-4" class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+    <div id="s2-4" class="clause-block">
+      <div class="orig-col"><div class="orig-col-inner">
+        <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">Sound Legal — Original</p>
+        <p class="text-gray-700 leading-relaxed text-sm">Section 2.4 Voting by Absentee Ballot at a Meeting. At the Board's discretion, Owners may vote by duly executed absentee ballot if provided as part of the meeting's notice. The absentee ballot must be provided by the Board in the meeting notice and shall satisfy any requirements under the Act. Absentee ballots, if utilized, shall be sent to all Owners in the same manner as notice of meetings, with a specified deadline for the return of the absentee ballots, which shall be no later than the adjournment of the meeting. An absentee ballot shall count towards quorum for all business conducted at the meeting.</p>
+      </div></div>
+      <button class="orig-tab-strip" onclick="toggleOrig(this.closest('.clause-block'))" aria-expanded="false" aria-label="Toggle Sound Legal original language"><span>Sound Legal</span></button>
+      <div class="clause-main grid grid-cols-1 md:grid-cols-2 gap-0">
       <div class="bg-white p-6 relative border-r border-gray-200">
         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Section 2.4 — Voting by Absentee Ballot at a Meeting</p>
         <p class="text-gray-800 leading-relaxed">Members may vote by duly executed absentee ballot if provided as part of the meeting's notice. The absentee ballot must be provided by the Board in the meeting notice and shall satisfy any requirements under the Act. Absentee ballots, if utilized, shall be sent to all Members in the same manner as notice of meetings, with a specified deadline for the return of the absentee ballots, which shall be no later than the adjournment of the meeting. An absentee ballot shall count towards quorum for all business conducted at the meeting.</p>
@@ -97,11 +148,26 @@
       <div class="bg-slate-50 p-6">
         <p class="text-xs font-semibold text-teal-600 uppercase tracking-wide mb-2">What Changed &amp; Why</p>
         <p class="text-gray-700 leading-relaxed"><strong>Removed: "At the Board's discretion."</strong> The current bylaws begin this section with "At the Board's discretion, Members may vote by absentee ballot..." — meaning the board could decline to offer absentee ballots entirely. That phrase is removed. When an absentee ballot is included in the meeting notice, it is available to all members. Absentee ballots still count toward quorum.</p>
+        <button class="history-tab" aria-expanded="false"
+          onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); this.nextElementSibling.hidden = !this.nextElementSibling.hidden;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          Proposed Language
+        </button>
+        <div class="history-content" hidden>
+          <p>Proposed language will be added here.</p>
+        </div>
       </div>
+    </div>
     </div>
 
     <!-- 2.5 -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+    <div class="clause-block">
+      <div class="orig-col"><div class="orig-col-inner">
+        <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">Sound Legal — Original</p>
+        <p class="text-gray-700 leading-relaxed text-sm">Section 2.5 Annual Meeting. The annual meeting of the Owners of the Association shall be held in the last quarter of the calendar year, at such date, time and place as the Board shall determine. Should the Board fail to hold an annual meeting in any calendar year, it shall endeavor to hold the meeting as soon as reasonably possible. The purposes of the annual meeting shall be to elect Directors or fill vacancies on the Board, and for the transaction of any other business as may properly come before the meeting. For the election of Directors, candidates shall be elected by plurality vote, with the candidate(s) receiving the largest number of votes being elected. Cumulative voting is not permitted. If more than one Director position is up for vote with different term lengths, the candidate(s) with the highest number of votes will obtain the longest Director position.</p>
+      </div></div>
+      <button class="orig-tab-strip" onclick="toggleOrig(this.closest('.clause-block'))" aria-expanded="false" aria-label="Toggle Sound Legal original language"><span>Sound Legal</span></button>
+      <div class="clause-main grid grid-cols-1 md:grid-cols-2 gap-0">
       <div class="bg-white p-6 relative border-r border-gray-200">
         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Section 2.5 — Annual Meeting</p>
         <p class="text-gray-800 leading-relaxed mb-3"><strong>The annual meeting of the Members of the Association shall be held each year between January 1 and December 31</strong>, at such date, time and place as the Board shall determine, or at such other date, time and location as may be designated by the Board to the extent consistent with the Declaration. <strong>If the annual meeting is postponed, it must be rescheduled and noticed within sixty (60) days.</strong> The purposes of the annual meeting shall be to elect Directors or fill vacancies on the Board, and for the transaction of any other business as may properly come before the meeting.</p>
@@ -117,11 +183,26 @@
         <p class="text-gray-700 leading-relaxed mb-3"><strong>Wider meeting window.</strong> The current bylaws restrict the annual meeting to the last quarter of the year (Q4). This revision opens the window to the full calendar year (January 1 through December 31). This gives the board more flexibility and makes a summer meeting possible.</p>
         <p class="text-gray-700 leading-relaxed mb-3"><strong>Mandatory reschedule deadline.</strong> Currently, if the board misses the annual meeting, it must only "endeavor to hold" it as soon as possible — a soft obligation with no deadline. This revision requires the board to reschedule and issue notice within 60 days. Election procedures and plurality voting are unchanged.</p>
         <p class="text-gray-700 leading-relaxed"><strong>New: member comment time and document access.</strong> The current bylaws say nothing about member comment at the annual meeting. This revision guarantees at least 15 minutes of comment time at the start and requires the board to post all relevant documents to members at least 48 hours before the meeting — so members can actually review materials before showing up.</p>
+        <button class="history-tab" aria-expanded="false"
+          onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); this.nextElementSibling.hidden = !this.nextElementSibling.hidden;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          Proposed Language
+        </button>
+        <div class="history-content" hidden>
+          <p>Proposed language will be added here.</p>
+        </div>
       </div>
+    </div>
     </div>
 
     <!-- 2.6 -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+    <div class="clause-block">
+      <div class="orig-col"><div class="orig-col-inner">
+        <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">Sound Legal — Original</p>
+        <p class="text-gray-700 leading-relaxed text-sm">A special meeting of the Owners of the Association for any purpose or purposes permitted hereunder or by law, may be called by the President of the Association, by resolution of the Board, upon written request of a majority of the Members of the Board, or upon the written request of Owners representing not less than twenty percent (20%) of the total votes in the Association. At the time such meeting is called by the President or Board resolution, or within a reasonable time after a meeting is called by written request of Owners as set forth above, the Board shall promptly deliver to Owners a notice of the special meeting that includes the time and place of the meeting and the business to be placed on the agenda for a vote of the Owners, including the text of any proposed amendment to the Declaration, Articles of Incorporation, Bylaws, and any proposal to remove a Director. For special meetings called by the Owners, the Board may exclude from the agenda any proposal that conflicts with the law or the Association's governing documents, including decisions that lie wholly within the purview of the Board. Not less than fourteen (14) nor more than fifty (50) days in advance of the meeting date the Secretary or their designee shall provide notice of the meeting. If the Association does not provide notice to Unit Owners of the special meeting within thirty (30) days after twenty per cent (20%) of Owners request the Secretary to do so, the requesting Owners may directly provide notice to all the Unit Owners of the meeting. The Unit Owners may discuss at a special meeting a matter not specifically set forth in the special meeting's notice but may not take action on the matter without the consent of all Unit Owners of the Association.</p>
+      </div></div>
+      <button class="orig-tab-strip" onclick="toggleOrig(this.closest('.clause-block'))" aria-expanded="false" aria-label="Toggle Sound Legal original language"><span>Sound Legal</span></button>
+      <div class="clause-main grid grid-cols-1 md:grid-cols-2 gap-0">
       <div class="bg-white p-6 relative border-r border-gray-200">
         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Section 2.6 — Special Meetings of Members</p>
         <p class="text-gray-800 leading-relaxed mb-3">A special meeting of the Members of the Association for any purpose or purposes permitted hereunder or by law, 
@@ -142,11 +223,26 @@
         <p class="text-gray-700 leading-relaxed"><strong>Removed:</strong> Board option to reject topics. Members may discuss any matter, with implementation reasonably limited by documents (which members can vote to change if needed) or RCWs.</p>
         <br>
         <p class="text-gray-700 leading-relaxed">The 20% member petition right, 30-day board response deadline (with member fallback if the board fails to act), and the unanimous consent requirement for non-noticed items are all unchanged.</p>
+        <button class="history-tab" aria-expanded="false"
+          onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); this.nextElementSibling.hidden = !this.nextElementSibling.hidden;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          Proposed Language
+        </button>
+        <div class="history-content" hidden>
+          <p>Proposed language will be added here.</p>
+        </div>
       </div>
+    </div>
     </div>
 
     <!-- 2.7 -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+    <div class="clause-block">
+      <div class="orig-col"><div class="orig-col-inner">
+        <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">Sound Legal — Original</p>
+        <p class="text-gray-700 leading-relaxed text-sm">Within thirty days after adoption of any proposed budget (including those adopting a special assessment), the Board must provide a copy of the budget to all Owners and set a date for a meeting of the Owners to consider ratification of the budget not less than fourteen (14) nor more than fifty (50) days after providing the budget. Unless at that meeting the Owners to which a majority of the votes in the Association are allocated reject the budget, the budget and the assessments against the Units included in the budget are ratified, whether or not a quorum is present. The budget shall include the information required under RCW 64.90.525 as in effect at any given time or any successor statute thereto. The Board may provide that a special assessment may be due and payable in installments over any period it determines and may provide a discount for early payment. If the proposed budget is rejected or the required notice is not given, the periodic budget last ratified by the Owners continues until the Owners ratify a subsequent budget proposed by the Board.</p>
+      </div></div>
+      <button class="orig-tab-strip" onclick="toggleOrig(this.closest('.clause-block'))" aria-expanded="false" aria-label="Toggle Sound Legal original language"><span>Sound Legal</span></button>
+      <div class="clause-main grid grid-cols-1 md:grid-cols-2 gap-0">
       <div class="bg-white p-6 relative border-r border-gray-200">
         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Section 2.7 — Budget Ratification Meeting</p>
         <p class="text-gray-800 leading-relaxed mb-3">Within thirty days after adoption of any proposed budget (including those adopting a special assessment), the Board must provide a copy of the budget to all Members and set a date for a meeting of the Members to consider ratification of the budget not less than fourteen (14) nor more than fifty (50) days after providing the budget. Unless at that meeting the Members to which a majority of the votes in the Association are allocated reject the budget, the budget and the assessments against the Lots included in the budget are ratified, whether or not a quorum is present. The budget shall include the information required under RCW 64.90.525 as in effect at any given time or any successor statute thereto. The Board may provide that a special assessment may be due and payable in installments over any period it determines and may provide a discount for early payment.</p>
@@ -158,11 +254,26 @@
       <div class="bg-slate-50 p-6">
         <p class="text-xs font-semibold text-teal-600 uppercase tracking-wide mb-2">What Changed &amp; Why</p>
         <p class="text-gray-700 leading-relaxed">No changes proposed to this section. The budget ratification meeting operates differently from other votes: any attendance level is sufficient, and the budget passes unless a majority of all votes in the Association vote to reject it. Member action is required to stop a budget, not to pass one. This meeting should remain separate from the annual meeting.</p>
+        <button class="history-tab" aria-expanded="false"
+          onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); this.nextElementSibling.hidden = !this.nextElementSibling.hidden;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          Proposed Language
+        </button>
+        <div class="history-content" hidden>
+          <p>Proposed language will be added here.</p>
+        </div>
       </div>
+    </div>
     </div>
 
     <!-- 2.8 -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+    <div class="clause-block">
+      <div class="orig-col"><div class="orig-col-inner">
+        <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">Sound Legal — Original</p>
+        <p class="text-gray-700 leading-relaxed text-sm">It shall be the duty of the Secretary to give notice of each annual or special meeting of the Owners, and the Secretary may enlist the assistance of any Director, officer or the Managing Agent in providing notice. Unless otherwise provided by law, the Declaration or these Bylaws, all notices given under the governing documents shall be in writing and may be delivered personally, by mail, or by email to those consenting to electronic notice. The notice of any meeting of the Owners shall state the time and place of the meeting and the items on the agenda to be voted on by the Owners, including the text of any proposed amendment to the Declaration, Bylaws or Articles, changes in the previously approved budget that result in a proposed increase in assessment obligations, and any proposal to remove a Director. Notice shall be deemed delivered as set forth in the Act. At an annual meeting, new business may be conducted on items even if not set forth on the agenda.</p>
+      </div></div>
+      <button class="orig-tab-strip" onclick="toggleOrig(this.closest('.clause-block'))" aria-expanded="false" aria-label="Toggle Sound Legal original language"><span>Sound Legal</span></button>
+      <div class="clause-main grid grid-cols-1 md:grid-cols-2 gap-0">
       <div class="bg-white p-6 relative border-r border-gray-200">
         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Section 2.8 — Notice of Meetings of Members</p>
         <p class="text-gray-800 leading-relaxed mb-3">It shall be the duty of the Secretary to give notice of each annual or special meeting of the Members, and the Secretary may enlist the assistance of any Director, officer or the Managing Agent in providing notice. Unless otherwise provided by law, the Declaration or these Bylaws, all notices given under the governing documents shall be in writing and may be delivered personally, by mail, or by email to those consenting to electronic notice.</p>
@@ -174,11 +285,26 @@
       <div class="bg-slate-50 p-6">
         <p class="text-xs font-semibold text-teal-600 uppercase tracking-wide mb-2">What Changed &amp; Why</p>
         <p class="text-gray-700 leading-relaxed">No changes proposed to this section. Notice must include amendment text, budget changes, and director removal proposals. New business not on the agenda may still be raised at the annual meeting.</p>
+        <button class="history-tab" aria-expanded="false"
+          onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); this.nextElementSibling.hidden = !this.nextElementSibling.hidden;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          Proposed Language
+        </button>
+        <div class="history-content" hidden>
+          <p>Proposed language will be added here.</p>
+        </div>
       </div>
+    </div>
     </div>
 
     <!-- 2.9 -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+    <div class="clause-block">
+      <div class="orig-col"><div class="orig-col-inner">
+        <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">Sound Legal — Original</p>
+        <p class="text-gray-700 leading-relaxed text-sm">Except where expressly prohibited by law or the Articles of Incorporation, notice of the day, place, hour and purpose or purposes of any meeting of the Owners may be waived in writing by any Owner at any time, either before or after the meeting; however, attendance at the meeting in person or by proxy shall constitute a waiver of notice of the meeting unless prior to or immediately upon commencement of such meeting the Owner in attendance asserts that proper notice was not given.</p>
+      </div></div>
+      <button class="orig-tab-strip" onclick="toggleOrig(this.closest('.clause-block'))" aria-expanded="false" aria-label="Toggle Sound Legal original language"><span>Sound Legal</span></button>
+      <div class="clause-main grid grid-cols-1 md:grid-cols-2 gap-0">
       <div class="bg-white p-6 relative border-r border-gray-200">
         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Section 2.9 — Waiver of Notice</p>
         <p class="text-gray-800 leading-relaxed">Except where expressly prohibited by law or the Articles of Incorporation, notice of the day, place, hour and purpose or purposes of any meeting of the Members may be waived in writing by any Member at any time, either before or after the meeting; however, attendance at the meeting in person or by proxy shall constitute a waiver of notice of the meeting unless prior to or immediately upon commencement of such meeting the Member in attendance asserts that proper notice was not given.</p>
@@ -189,11 +315,26 @@
       <div class="bg-slate-50 p-6">
         <p class="text-xs font-semibold text-teal-600 uppercase tracking-wide mb-2">What Changed &amp; Why</p>
         <p class="text-gray-700 leading-relaxed">No changes proposed to this section. If you attend a meeting, you're presumed to have waived any notice objection — unless you raise it at the very start of the meeting.</p>
+        <button class="history-tab" aria-expanded="false"
+          onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); this.nextElementSibling.hidden = !this.nextElementSibling.hidden;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          Proposed Language
+        </button>
+        <div class="history-content" hidden>
+          <p>Proposed language will be added here.</p>
+        </div>
       </div>
+    </div>
     </div>
 
     <!-- 2.10 -->
-    <div id="s2-10" class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+    <div id="s2-10" class="clause-block">
+      <div class="orig-col"><div class="orig-col-inner">
+        <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">Sound Legal — Original</p>
+        <p class="text-gray-700 leading-relaxed text-sm">At any meeting of Owners, the presence in person, absentee ballot, or by proxy of fifty percent (50%) of the total votes of the Owners in the Association shall constitute a quorum for the transaction of business. Quorum may be established at any time after the meeting is called to order, but no business conducted prior to obtaining quorum shall be valid. The Owners present at a duly convened meeting may continue to do business until adjournment, notwithstanding the withdrawal of enough Owners to leave less than a quorum. The vote of a majority of the votes of Owners present in person or by proxy at a meeting at which there is a quorum shall be the act of the Association, except as otherwise provided herein, by law or by the Declaration or Articles of Incorporation.</p>
+      </div></div>
+      <button class="orig-tab-strip" onclick="toggleOrig(this.closest('.clause-block'))" aria-expanded="false" aria-label="Toggle Sound Legal original language"><span>Sound Legal</span></button>
+      <div class="clause-main grid grid-cols-1 md:grid-cols-2 gap-0">
       <div class="bg-white p-6 relative border-r border-gray-200">
         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Section 2.10 — Quorum</p>
         <p class="text-gray-800 leading-relaxed">At any meeting of Members, quorum is present if, <strong>at the beginning of the meeting</strong>, members entitled to cast <strong>twenty percent (20%)</strong> of the total votes of the Members in the Association are present <strong>in person, by proxy, by remote participation, or by valid absentee ballot</strong>. <strong>The board agent shall determine whether quorum has been established.</strong> Quorum may be established at any time after the meeting is called to order, but no business conducted prior to obtaining quorum shall be valid. The Members present at a duly convened meeting may continue to do business until adjournment, notwithstanding the withdrawal of enough Members to leave less than a quorum. The vote of a majority of the votes of Members present in person or by proxy at a meeting at which there is a quorum shall be the act of the Association, except as otherwise provided herein, by law or by the Declaration or Articles of Incorporation.</p>
@@ -206,11 +347,26 @@
         <p class="text-gray-700 leading-relaxed mb-3"><strong>Quorum reduced from 50% to 20%.</strong> The current 50% requirement means roughly 145 of 289 lots must be represented before any business can be conducted. That has caused meeting failures. The WUCIOA default (RCW 64.90.450) is 20% — about 58 lots. This revision adopts that default.</p>
         <p class="text-gray-700 leading-relaxed mb-3"><strong>Quorum now counts remote participation and absentee ballots.</strong> If you attend electronically or submitted an absentee ballot, you count toward quorum.</p>
         <p class="text-gray-700 leading-relaxed"><strong>Board agent determines quorum.</strong> The management company — not the board — makes the official quorum determination, consistent with the ballot administration changes in <a href="#s2-3" class="text-teal-600 hover:underline">Section 2.3</a>.</p>
+        <button class="history-tab" aria-expanded="false"
+          onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); this.nextElementSibling.hidden = !this.nextElementSibling.hidden;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          Proposed Language
+        </button>
+        <div class="history-content" hidden>
+          <p>Proposed language will be added here.</p>
+        </div>
       </div>
+    </div>
     </div>
 
     <!-- 2.11 -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+    <div class="clause-block">
+      <div class="orig-col"><div class="orig-col-inner">
+        <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">Sound Legal — Original</p>
+        <p class="text-gray-700 leading-relaxed text-sm">If any meeting of the Association cannot be organized because of a failure to obtain a quorum, a majority of the Owners present, in person or by proxy, may adjourn the meeting to a time not less than fourteen (14) nor more than fifty (50) days from the time the original meeting was called. At the reconvened meeting, if a quorum is present, any business which might have been transacted at the meeting originally called may be transacted. Any absentee ballots and proxies valid at the original meeting shall be valid at the reconvened meeting unless the ballot or proxy indicates otherwise. When an Association meeting is adjourned to another time or place, notice of the reconvened meeting must be given to all Owners not less than fourteen (14) nor more than fifty (50) days in advance.</p>
+      </div></div>
+      <button class="orig-tab-strip" onclick="toggleOrig(this.closest('.clause-block'))" aria-expanded="false" aria-label="Toggle Sound Legal original language"><span>Sound Legal</span></button>
+      <div class="clause-main grid grid-cols-1 md:grid-cols-2 gap-0">
       <div class="bg-white p-6 relative border-r border-gray-200">
         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Section 2.11 — Adjourned Meetings</p>
         <p class="text-gray-800 leading-relaxed">If any meeting of the Association cannot be organized because of a failure to obtain a quorum, a majority of the Members present, in person or by proxy, may adjourn the meeting to a time not less than fourteen (14) nor more than fifty (50) days from the time the original meeting was called. At the reconvened meeting, if a quorum is present, any business which might have been transacted at the meeting originally called may be transacted. Any absentee ballots and proxies valid at the original meeting shall be valid at the reconvened meeting unless the ballot or proxy indicates otherwise. When an Association meeting is adjourned to another time or place, notice of the reconvened meeting must be given to all Members not less than fourteen (14) nor more than fifty (50) days in advance.</p>
@@ -221,11 +377,26 @@
       <div class="bg-slate-50 p-6">
         <p class="text-xs font-semibold text-teal-600 uppercase tracking-wide mb-2">What Changed &amp; Why</p>
         <p class="text-gray-700 leading-relaxed">No changes proposed to this section. Absentee ballots from the original meeting remain valid at the reconvened meeting, protecting members who participated but cannot attend again.</p>
+        <button class="history-tab" aria-expanded="false"
+          onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); this.nextElementSibling.hidden = !this.nextElementSibling.hidden;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          Proposed Language
+        </button>
+        <div class="history-content" hidden>
+          <p>Proposed language will be added here.</p>
+        </div>
       </div>
+    </div>
     </div>
 
     <!-- 2.12 -->
-    <div id="s2-12" class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+    <div id="s2-12" class="clause-block">
+      <div class="orig-col"><div class="orig-col-inner">
+        <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">Sound Legal — Original</p>
+        <p class="text-gray-700 leading-relaxed text-sm">A proxy must be executed in writing by an Owner or its duly authorized attorney-in-fact. No proxy shall be valid after eleven (11) months from the date of its execution, unless otherwise provided in the proxy form. Revocation of a proxy shall not be effective until written notice thereof has actually been received by the person presiding over a meeting of the corporation, or, in the absence of a meeting, the Secretary or Managing Agent that the Board may specify. No proxy shall be effective if it is not dated or purports to be revocable without notice. The Board may designate a particular proxy form for a proxy to be valid. A proxy may be delivered to the Secretary (or any other officer or Managing Agent that the Board may specify) by personal delivery, U.S. mail, facsimile, scanned via email, or any other method approved by the Board.</p>
+      </div></div>
+      <button class="orig-tab-strip" onclick="toggleOrig(this.closest('.clause-block'))" aria-expanded="false" aria-label="Toggle Sound Legal original language"><span>Sound Legal</span></button>
+      <div class="clause-main grid grid-cols-1 md:grid-cols-2 gap-0">
       <div class="bg-white p-6 relative border-r border-gray-200">
         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Section 2.12 — Proxies</p>
         <p class="text-gray-800 leading-relaxed">A proxy must be executed in writing by a Member or its duly authorized attorney-in-fact. No proxy shall be valid after eleven (11) months from the date of its execution, unless otherwise provided in the proxy form. Revocation of a proxy shall not be effective until written notice thereof has actually been received by the person presiding over a meeting of the corporation, or, in the absence of a meeting, the Secretary or Managing Agent that the Board may specify. No proxy shall be effective if it is not dated or purports to be revocable without notice. The Board may designate a particular proxy form for a proxy to be valid. A proxy may be delivered to the Secretary (or any other officer or Managing Agent that the Board may specify) by personal delivery, U.S. mail, facsimile, scanned via email, or any other method approved by the Board.</p>
@@ -236,11 +407,26 @@
       <div class="bg-slate-50 p-6">
         <p class="text-xs font-semibold text-teal-600 uppercase tracking-wide mb-2">What Changed &amp; Why</p>
         <p class="text-gray-700 leading-relaxed">No changes proposed to this section. Proxies are valid for up to 11 months, must be in writing, dated, and signed. Written revocation is required — the proxy doesn't automatically cancel if the member attends in person (see <a href="#s2-2" class="text-teal-600 hover:underline">Section 2.2</a> for how last-vote-counts handles that).</p>
+        <button class="history-tab" aria-expanded="false"
+          onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); this.nextElementSibling.hidden = !this.nextElementSibling.hidden;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          Proposed Language
+        </button>
+        <div class="history-content" hidden>
+          <p>Proposed language will be added here.</p>
+        </div>
       </div>
+    </div>
     </div>
 
     <!-- 2.13 -->
-    <div id="s2-13" class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+    <div id="s2-13" class="clause-block">
+      <div class="orig-col"><div class="orig-col-inner">
+        <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">Sound Legal — Original</p>
+        <p class="text-gray-700 leading-relaxed text-sm">With regard to any matter for which Owner approval is required, the Board may decide that voting of the Owners shall be conducted by mail, email, or other Electronic Transmission as permitted by the Act &amp; RCW 24.03A. Procedures for such voting (including ballot procedures set forth in the Act) may be adopted by the Board provided they are consistent with the above laws and meet the intent of the Declaration and Bylaws to provide the Owners with adequate notice and opportunity to vote. Notice and quorum requirements for such voting shall be the same as for a meeting of the Association. If a vote is performed without a meeting of the owners, notice of its outcome must be provided to all Owners. A vote without a meeting may not be used (a) in lieu of an annual meeting of the Owners, (b) to remove a Director, or (c) for ratifying a budget.</p>
+      </div></div>
+      <button class="orig-tab-strip" onclick="toggleOrig(this.closest('.clause-block'))" aria-expanded="false" aria-label="Toggle Sound Legal original language"><span>Sound Legal</span></button>
+      <div class="clause-main grid grid-cols-1 md:grid-cols-2 gap-0">
       <div class="bg-white p-6 relative border-r border-gray-200">
         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Section 2.13 — Voting Without a Meeting</p>
         <p class="text-gray-800 leading-relaxed">With regard to any matter for which Member approval is required, the Board may decide that voting of the Members shall be conducted by mail, email, or other Electronic Transmission as permitted by the Act &amp; RCW 24.03A. Procedures for such voting (including ballot procedures set forth in the Act) may be adopted by the Board provided they are consistent with the above laws and meet the intent of the Declaration and Bylaws to provide the Members with adequate notice and opportunity to vote. Notice and quorum requirements for such voting shall be the same as for a meeting of the Association. If a vote is performed without a meeting of the members, notice of its outcome must be provided to all Members. A vote without a meeting may not be used (a) in lieu of an annual meeting of the Members, (b) to remove a Director, or (c) for ratifying a budget.</p>
@@ -251,11 +437,26 @@
       <div class="bg-slate-50 p-6">
         <p class="text-xs font-semibold text-teal-600 uppercase tracking-wide mb-2">What Changed &amp; Why</p>
         <p class="text-gray-700 leading-relaxed">No changes proposed to this section. Mail or electronic voting remains available for matters not requiring a full meeting. The three hard limits are unchanged: voting without a meeting cannot replace the annual meeting, remove a director, or ratify a budget.</p>
+        <button class="history-tab" aria-expanded="false"
+          onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); this.nextElementSibling.hidden = !this.nextElementSibling.hidden;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          Proposed Language
+        </button>
+        <div class="history-content" hidden>
+          <p>Proposed language will be added here.</p>
+        </div>
       </div>
+    </div>
     </div>
 
     <!-- 2.14 -->
-    <div id="s2-14" class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+    <div id="s2-14" class="clause-block">
+      <div class="orig-col"><div class="orig-col-inner">
+        <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">Sound Legal — Original</p>
+        <p class="text-gray-700 leading-relaxed text-sm">Except as otherwise provided in the Declaration or these Bylaws, the Board shall in all respects determine the method of voting for a particular issue, at a particular meeting, or with respect to election of any Director(s), including but not limited to the form of all ballots, consents, proxies, directed proxies, written consent forms, and the wording of questions thereon and date for return of same. The Board may also include on such voting forms any questions on which it seeks an advisory vote.</p>
+      </div></div>
+      <button class="orig-tab-strip" onclick="toggleOrig(this.closest('.clause-block'))" aria-expanded="false" aria-label="Toggle Sound Legal original language"><span>Sound Legal</span></button>
+      <div class="clause-main grid grid-cols-1 md:grid-cols-2 gap-0">
       <div class="bg-white p-6 relative border-r border-gray-200">
         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Section 2.14 — Ballot Administration</p>
         <p class="text-gray-800 leading-relaxed"><strong>Members may vote in person, by absentee ballot, or by electronic ballot. All ballots shall be administered by the management company or, in its absence, the Secretary. Board members and candidates may not handle, access, or count ballots in which they have a personal interest.</strong></p>
@@ -266,11 +467,26 @@
       <div class="bg-slate-50 p-6">
         <p class="text-xs font-semibold text-teal-600 uppercase tracking-wide mb-2">What Changed &amp; Why</p>
         <p class="text-gray-700 leading-relaxed"><strong>Major restructure.</strong> The current section gives the board broad control over all voting procedures, ballot design, and form wording. This revision replaces that with a simple rule: all ballots are administered by the management company (or Secretary if there's no management company), and no board member or candidate with a personal interest in the outcome may handle or access them. This removes a structural vulnerability that has enabled ballot manipulation in the past.</p>
+        <button class="history-tab" aria-expanded="false"
+          onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); this.nextElementSibling.hidden = !this.nextElementSibling.hidden;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          Proposed Language
+        </button>
+        <div class="history-content" hidden>
+          <p>Proposed language will be added here.</p>
+        </div>
       </div>
+    </div>
     </div>
 
     <!-- 2.15 -->
-    <div id="s2-15" class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+    <div id="s2-15" class="clause-block">
+      <div class="orig-col"><div class="orig-col-inner">
+        <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">Sound Legal — Original</p>
+        <p class="text-gray-700 leading-relaxed text-sm">The Board President shall preside as chair of all Association meetings unless absent or a majority of the Board appoints another person to preside as chair. The Secretary shall keep the minutes of the meeting and record in a minute book all resolutions adopted at Association meetings. On the presiding officer's or the Board's direction, reference may be made to the most current available edition of Robert's Rules of Order to determine any parliamentary procedure or other question which may arise at any meeting. Other than the Secretary or other person required to take meeting minutes, audio or video recording of any Board, Association or Committee meeting is only allowed if approved by the person presiding over the meeting and no objection is raised by any person in attendance.</p>
+      </div></div>
+      <button class="orig-tab-strip" onclick="toggleOrig(this.closest('.clause-block'))" aria-expanded="false" aria-label="Toggle Sound Legal original language"><span>Sound Legal</span></button>
+      <div class="clause-main grid grid-cols-1 md:grid-cols-2 gap-0">
       <div class="bg-white p-6 relative border-r border-gray-200">
         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Section 2.15 — Conduct at Meetings</p>
         <p class="text-gray-800 leading-relaxed mb-3">The Secretary shall keep the minutes of the meeting and record in a minute book all resolutions adopted at Association meetings. On the presiding officer's or the Board's direction, reference may be made to the most current available edition of Robert's Rules of Order to determine any parliamentary procedure or other question which may arise at any meeting.</p>
@@ -298,11 +514,26 @@
           <p style="margin-top:0.625rem;">A recording fills that gap immediately. It preserves the full events of a meeting for reference before minutes are ever approved, and serves as a check on whether the minutes accurately reflect what happened.</p>
           <p style="margin-top:0.625rem;">In early 2026, board members raised a separate concern: members who work during meeting hours, or who have family obligations, are structurally disadvantaged in participating in association governance. A recording mandate addresses this directly — members can catch up on their own time, stay informed, and remain active participants without having to choose between their job and their community.</p>
         </div>
+        <button class="history-tab" aria-expanded="false"
+          onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); this.nextElementSibling.hidden = !this.nextElementSibling.hidden;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          Proposed Language
+        </button>
+        <div class="history-content" hidden>
+          <p>Proposed language will be added here.</p>
+        </div>
       </div>
+    </div>
     </div>
 
     <!-- 2.16 -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+    <div class="clause-block">
+      <div class="orig-col"><div class="orig-col-inner">
+        <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">Sound Legal — Original</p>
+        <p class="text-gray-700 leading-relaxed text-sm">An Owner present at a meeting of owners at which action is taken on any matter put to a vote of the membership shall be presumed to have assented to the action taken unless that Owner's dissent or abstention is entered in the minutes of the meeting, or unless such member files a written dissent or abstention to such action with the person acting as secretary of the meeting before the adjournment thereof, or forwards such dissent or abstention to the secretary of the Association immediately after the adjournment of the meeting. The right to dissent or abstain shall not apply to an Owner who voted in favor of an action.</p>
+      </div></div>
+      <button class="orig-tab-strip" onclick="toggleOrig(this.closest('.clause-block'))" aria-expanded="false" aria-label="Toggle Sound Legal original language"><span>Sound Legal</span></button>
+      <div class="clause-main grid grid-cols-1 md:grid-cols-2 gap-0">
       <div class="bg-white p-6 relative border-r border-gray-200">
         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Section 2.16 — Presumption of Assent</p>
         <p class="text-gray-800 leading-relaxed">A Member present at a meeting of members at which action is taken on any matter put to a vote of the membership shall be presumed to have assented to the action taken unless that Member's dissent or abstention is entered in the minutes of the meeting, or unless such member files a written dissent or abstention to such action with the person acting as secretary of the meeting before the adjournment thereof, or forwards such dissent or abstention to the secretary of the Association immediately after the adjournment of the meeting. The right to dissent or abstain shall not apply to a Member who voted in favor of an action.</p>
@@ -313,11 +544,26 @@
       <div class="bg-slate-50 p-6">
         <p class="text-xs font-semibold text-teal-600 uppercase tracking-wide mb-2">What Changed &amp; Why</p>
         <p class="text-gray-700 leading-relaxed">No changes proposed to this section. If you attend a meeting and don't register dissent, you're presumed to have agreed. Dissent can be recorded during the meeting or submitted to the Secretary immediately after adjournment.</p>
+        <button class="history-tab" aria-expanded="false"
+          onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); this.nextElementSibling.hidden = !this.nextElementSibling.hidden;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          Proposed Language
+        </button>
+        <div class="history-content" hidden>
+          <p>Proposed language will be added here.</p>
+        </div>
       </div>
+    </div>
     </div>
 
     <!-- 2.17 -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+    <div class="clause-block">
+      <div class="orig-col"><div class="orig-col-inner">
+        <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">Sound Legal — Original</p>
+        <p class="text-gray-700 leading-relaxed text-sm">Minutes of all Association meetings shall be maintained in a record by the Secretary of the Association or by another person designated by the Directors. The decision of each matter voted upon at an Association meeting must be recorded in the minutes. Minutes for every meeting shall be approved by the Association before or at the next Association meeting.</p>
+      </div></div>
+      <button class="orig-tab-strip" onclick="toggleOrig(this.closest('.clause-block'))" aria-expanded="false" aria-label="Toggle Sound Legal original language"><span>Sound Legal</span></button>
+      <div class="clause-main grid grid-cols-1 md:grid-cols-2 gap-0">
       <div class="bg-white p-6 relative border-r border-gray-200">
         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Section 2.17 — Minutes</p>
         <p class="text-gray-800 leading-relaxed">Minutes of all Association meetings shall be maintained in a record by the Secretary of the Association or by another person designated by the Directors. The decision of each matter voted upon at an Association meeting must be recorded in the minutes. Minutes for every meeting shall be approved by the Association before or at the next Association meeting.</p>
@@ -328,11 +574,26 @@
       <div class="bg-slate-50 p-6">
         <p class="text-xs font-semibold text-teal-600 uppercase tracking-wide mb-2">What Changed &amp; Why</p>
         <p class="text-gray-700 leading-relaxed">No changes proposed to this section. Every vote outcome must be recorded, and minutes must be approved at the next meeting — preventing indefinite delays to the official record.</p>
+        <button class="history-tab" aria-expanded="false"
+          onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); this.nextElementSibling.hidden = !this.nextElementSibling.hidden;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          Proposed Language
+        </button>
+        <div class="history-content" hidden>
+          <p>Proposed language will be added here.</p>
+        </div>
       </div>
+    </div>
     </div>
 
     <!-- 2.18 -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+    <div class="clause-block">
+      <div class="orig-col"><div class="orig-col-inner">
+        <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">Sound Legal — Original</p>
+        <p class="text-gray-700 leading-relaxed text-sm">New section — no equivalent in the Sound Legal revision. See committee notes for what changed and why.</p>
+      </div></div>
+      <button class="orig-tab-strip" onclick="toggleOrig(this.closest('.clause-block'))" aria-expanded="false" aria-label="Toggle Sound Legal original language"><span>Sound Legal</span></button>
+      <div class="clause-main grid grid-cols-1 md:grid-cols-2 gap-0">
       <div class="bg-white p-6 relative border-r border-gray-200">
         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Section 2.18 — Voting</p>
         <p class="text-gray-700 italic text-sm mb-4">Note: The committee recommends that all voting rules currently distributed across <a href="#s2-2" class="text-teal-600 hover:underline">2.2</a>, <a href="#s2-3" class="text-teal-600 hover:underline">2.3</a>, <a href="#s2-4" class="text-teal-600 hover:underline">2.4</a>, <a href="#s2-10" class="text-teal-600 hover:underline">2.10</a>, <a href="#s2-12" class="text-teal-600 hover:underline">2.12</a>, <a href="#s2-13" class="text-teal-600 hover:underline">2.13</a>, and <a href="#s2-14" class="text-teal-600 hover:underline">2.14</a> be consolidated into this section in a future draft, so members and volunteers can find every voting rule in one place.</p>
@@ -371,7 +632,16 @@
           <p style="margin-top:0.625rem;">The shift to electronic and absentee ballots broke that model. Ballots go out in advance with a fixed candidate list, and members who vote early have no way to respond to a nomination made later at the meeting. Floor nominations effectively became inaccessible to anyone who didn't vote in person on the day.</p>
           <p style="margin-top:0.625rem;">The write-in provision in Section 2.18(c) is designed to restore that capability in an electronic format. Instead of a nomination made from the floor, a candidate can emerge through the ballots themselves — if two or more members independently write in the same name, that candidate is added to a public list visible to all members during the ballot window. This gives absentee voters a chance to respond to emerging candidates the same way an in-person attendee could respond to a floor nomination.</p>
         </div>
+        <button class="history-tab" aria-expanded="false"
+          onclick="this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true'); this.nextElementSibling.hidden = !this.nextElementSibling.hidden;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          Proposed Language
+        </button>
+        <div class="history-content" hidden>
+          <p>Proposed language will be added here.</p>
+        </div>
       </div>
+    </div>
     </div>
 
   </main>
@@ -390,6 +660,7 @@
   </div>
   <script src="../../js/modal.js"></script>
   <script src="../../js/terms.js"></script>
+  <script src="../../js/source-tabs.js"></script>
   <script src="../../js/checklist.js"></script>
 
 </body>
