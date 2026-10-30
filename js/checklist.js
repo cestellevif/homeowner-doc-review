@@ -46,9 +46,9 @@ function injectStyles() {
 
     #checklist-panel {
       position: fixed !important;
-      top: auto !important;
-      bottom: 0 !important;
-      left: 0 !important;
+      top: auto;
+      bottom: 0;
+      left: 0;
       height: auto !important;
       max-height: calc(100vh - 2rem) !important;
       width: 320px !important;
@@ -56,12 +56,12 @@ function injectStyles() {
       background: white !important;
       z-index: 9001 !important;
       box-shadow: 4px 0 24px rgba(0,0,0,0.18) !important;
-      transform: translateX(-100%) !important;
-      transition: transform 0.25s ease !important;
-      display: flex !important;
+      transform: translateX(-100%);
+      transition: transform 0.25s ease;
+      display: flex;
       flex-direction: column !important;
     }
-    #checklist-panel.cl-open { transform: translateX(0) !important; }
+    #checklist-panel.cl-open { transform: translateX(0); }
 
     .cl-header {
       display: flex;
@@ -251,6 +251,8 @@ function buildPanel() {
   makeDraggable(panel);
 }
 
+// Position, transform, and display are left without !important in the injected
+// styles so the inline values set here (drag, show/hide) can override them.
 function toggleChecklist() {
   const panel = document.getElementById('checklist-panel');
   // If panel was dragged (has explicit positioning), just toggle visibility
@@ -270,6 +272,8 @@ function makeDraggable(panel) {
   header.style.cursor = 'grab';
 
   header.addEventListener('mousedown', (e) => {
+    // Let the close button work as a click, not the start of a drag
+    if (e.target.closest('.cl-close')) return;
     const r = panel.getBoundingClientRect();
     // Detach from CSS slide-in anchor — switch to free positioning
     panel.style.cssText += `bottom:auto;left:${r.left}px;top:${r.top}px;transform:none;transition:none;`;
