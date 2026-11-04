@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<!-- Welcome / orientation page: a plain-language on-ramp for neighbors new to the bylaws review.
+     Explains what bylaws are, how the documents fit together, the FAIR test, and how to read a clause card,
+     then points readers into the revised bylaws. The example card reuses the live Sound Legal tab (source-tabs.js). -->
+<html lang="en">
+<head>
+  <title>Welcome · Review Committee</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <header class="bg-slate-800 text-white px-8 py-4">
+    <nav class="text-sm text-slate-300 space-x-2" aria-label="Breadcrumb">
+      <a href="../" class="hover:text-white">Home</a>
+      <span aria-hidden="true">/</span>
+      <span class="text-white">Welcome</span>
+    </nav>
+    <h1 class="text-xl font-bold mt-1">New here? Start with the bylaws</h1>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 py-10 space-y-8">
+
+    <!-- ─── Why now -->
+    <section class="bg-white border border-gray-200 rounded-lg shadow-sm p-6">
+      <p class="text-gray-700 leading-relaxed mb-3">Our bylaws were written in 2008. Washington State has a new law for homeowners' associations, and by January 1, 2028, every HOA has to follow it. Where our bylaws don't match the new law, the law wins.</p>
+      <p class="text-gray-700 leading-relaxed mb-3">To get started, the board asked the Association's attorneys, Sound Legal, to draft an initial set of updated bylaws. That draft is what the committee is working from now, reviewing and revising it section by section.</p>
+      <p class="text-gray-700 leading-relaxed mb-5">In the coming year, members will vote on revised bylaws. This site walks through the draft one section at a time, so you can see what's changing, why, and tell the committee what you think.</p>
+      <a href="../documents/revised-bylaws/" class="inline-block bg-teal-600 hover:bg-teal-700 text-white font-semibold px-6 py-3 rounded-lg transition">Go to the revised bylaws →</a>
+    </section>
+
+    <!-- ─── What bylaws are -->
+    <section>
+      <h2 class="text-lg font-bold text-slate-800 mb-3">What bylaws are</h2>
+      <p class="text-gray-700 leading-relaxed">Think of the bylaws as our community's constitution: the trunk of the tree, strong and hard to move. Everything else in the HOA grows out of them. They set how the board is elected, how meetings work, and most of all, how members participate. That's why changing them takes a vote of the members.</p>
+    </section>
+
+    <!-- ─── How the documents fit together: higher on the list wins in a conflict -->
+    <section>
+      <h2 class="text-lg font-bold text-slate-800 mb-3">How our documents fit together</h2>
+      <ol class="grid grid-cols-1 sm:grid-cols-4 gap-3">
+        <li class="bg-white border border-gray-200 rounded-lg p-4">
+          <p class="text-xs font-semibold text-teal-600 uppercase tracking-wide mb-1">1 · State law</p>
+          <p class="text-sm text-gray-700 leading-relaxed">Washington's laws for HOAs. Nothing in our documents can override them.</p>
+        </li>
+        <li class="bg-white border border-gray-200 rounded-lg p-4">
+          <p class="text-xs font-semibold text-teal-600 uppercase tracking-wide mb-1">2 · Covenants</p>
+          <p class="text-sm text-gray-700 leading-relaxed">Promises tied to every lot, recorded with the county. They apply to every owner, now and in the future.</p>
+        </li>
+        <li class="bg-white border border-gray-200 rounded-lg p-4">
+          <p class="text-xs font-semibold text-teal-600 uppercase tracking-wide mb-1">3 · Bylaws</p>
+          <p class="text-sm text-gray-700 leading-relaxed">How the HOA runs: elections, meetings, voting, and members' rights. Changed only by a member vote.</p>
+        </li>
+        <li class="bg-white border border-gray-200 rounded-lg p-4">
+          <p class="text-xs font-semibold text-teal-600 uppercase tracking-wide mb-1">4 · Policies</p>
+          <p class="text-sm text-gray-700 leading-relaxed">Day-to-day details set by the board. The board can change them at any board meeting.</p>
+        </li>
+      </ol>
+      <p class="text-sm text-gray-500 mt-3">If two of these ever conflict, the one higher on the list wins.</p>
+    </section>
+
+    <!-- ─── Bylaw or policy -->
+    <section>
+      <h2 class="text-lg font-bold text-slate-800 mb-3">Bylaw or policy?</h2>
+      <p class="text-gray-700 leading-relaxed mb-3">Both are rules, but they work differently. Bylaws are approved by members, and changing them takes a member vote. Policies are set by the board and can change at any board meeting.</p>
+      <p class="text-gray-700 leading-relaxed mb-3">Day-to-day details, like park hours or how to update your email address with the HOA, fit well in a policy. Anything that protects your right to see, speak, or decide belongs in the bylaws. So does the basic setup of the HOA, like who the officers are and what they do.</p>
+      <p class="text-gray-700 leading-relaxed">An example: state law says our HOA must have a treasurer, but leaves the treasurer's job up to us. If that job were set only by board policy, one board could make the treasurer responsible for the money and the budget, and the next could make it about bringing snacks to meetings. That's why the important jobs are spelled out in the bylaws, where only a member vote can change them. Clear bylaws also save money: vague rules lead to disagreements, and legal bills come out of our dues.</p>
+    </section>
+
+    <!-- ─── FAIR test -->
+    <section>
+      <h2 class="text-lg font-bold text-slate-800 mb-3">A simple way to read: the FAIR test</h2>
+      <p class="text-gray-700 leading-relaxed mb-4">Reading a whole set of bylaws at once is a lot. A simpler way in is to check each piece with four questions:</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+        <div class="bg-white border border-gray-200 rounded-lg p-4 flex gap-3">
+          <span class="text-2xl font-bold text-teal-600 leading-none" aria-hidden="true">F</span>
+          <p class="text-sm text-gray-700 leading-relaxed"><strong>Find out.</strong> Does it protect your right to know what's happening?</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-4 flex gap-3">
+          <span class="text-2xl font-bold text-teal-600 leading-none" aria-hidden="true">A</span>
+          <p class="text-sm text-gray-700 leading-relaxed"><strong>Ask.</strong> Does it protect your right to be heard?</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-4 flex gap-3">
+          <span class="text-2xl font-bold text-teal-600 leading-none" aria-hidden="true">I</span>
+          <p class="text-sm text-gray-700 leading-relaxed"><strong>In the vote.</strong> Does it protect your right to decide?</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-4 flex gap-3">
+          <span class="text-2xl font-bold text-teal-600 leading-none" aria-hidden="true">R</span>
+          <p class="text-sm text-gray-700 leading-relaxed"><strong>Repair.</strong> Does it give us a way to fix things when they go wrong?</p>
+        </div>
+      </div>
+      <p class="text-gray-700 leading-relaxed mb-3">If a protection you care about lives only in a policy, or nowhere at all, FAIR helps you spot it.</p>
+      <!-- Same look as the floating checklist button on article pages, placed inline so readers can try it here -->
+      <div class="bg-white border border-gray-200 rounded-lg p-4 flex gap-4 items-start">
+        <button type="button" onclick="toggleChecklist()" class="flex-shrink-0 w-11 h-11 rounded-full bg-slate-800 hover:bg-slate-900 text-white flex items-center justify-center shadow-lg" aria-label="Open review checklist" title="Review checklist">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+        </button>
+        <p class="text-sm text-gray-700 leading-relaxed"><strong>Want to go deeper? Try the Review Checklist.</strong> Every article page has this button in the bottom-left corner. It opens the fuller set of questions the committee uses, and you can tick them off as you read. Nothing is saved or shared; it's just for you. Click it to see.</p>
+      </div>
+    </section>
+
+    <!-- ─── How to read a section: live example card (Sound Legal tab works) -->
+    <section>
+      <h2 class="text-lg font-bold text-slate-800 mb-3">How to read a section</h2>
+      <p class="text-gray-700 leading-relaxed mb-4">Each section of the revised bylaws is a card like this one. Try clicking the yellow tab on the left.</p>
+
+      <div class="clause-block bg-white">
+        <div class="orig-col"><div class="orig-col-inner">
+          <p class="text-xs font-semibold text-amber-700 uppercase tracking-wide mb-2">Sound Legal — Original</p>
+          <p class="text-gray-700 leading-relaxed text-sm">Section 3.10 Regular Meetings. Regular meetings of the Board of Directors shall be held at such place, day and hour as the Board from time to time may specify by resolution made available to Owners. Subject to any applicable notice requirements, there shall be at least one (1) regular Board meeting each fiscal quarter.</p>
+        </div></div>
+        <button class="orig-tab-strip" onclick="toggleOrig(this.closest('.clause-block'))" aria-expanded="false" aria-label="Toggle Sound Legal original language"><span>Sound Legal</span></button>
+        <div class="clause-main grid grid-cols-1 md:grid-cols-2 gap-0">
+        <div class="bg-white p-6 relative border-r border-gray-200">
+          <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">Example — Section 3.10 Regular Meetings</p>
+          <p class="text-gray-800 leading-relaxed">Regular meetings of the Board of Directors shall be held at such place, day, and time as the Board specifies to the Members. There shall be at least one regular Board meeting each <strong>calendar</strong> quarter <strong>and at least six regular board meetings each calendar year</strong>.</p>
+        </div>
+        <div class="bg-slate-50 p-6">
+          <p class="text-xs font-semibold text-teal-600 uppercase tracking-wide mb-2">What Changed &amp; Why</p>
+          <p class="text-gray-700 leading-relaxed">The board must hold at least six regular meetings a year, the minimum needed to keep the Association's business moving.</p>
+        </div>
+        </div>
+      </div>
+
+      <ol class="mt-5 space-y-3 text-gray-700 leading-relaxed list-decimal pl-5">
+        <li><strong>The yellow tab</strong> opens the attorneys' original Sound Legal draft, so you can compare it with the committee's revision side by side.</li>
+        <li><strong>The middle column</strong> is the revised wording. Anything new or changed is in <strong>bold</strong>.</li>
+        <li><strong>What Changed &amp; Why</strong> explains the change in plain language, and why it matters.</li>
+        <li><strong>Proposed Language</strong> and <strong>History</strong> buttons open extra detail: ideas still under discussion, and the real events behind a change.</li>
+        <li><strong>Yellow "New Proposal" boxes</strong> mark bigger ideas the committee is putting forward, like new officer positions.</li>
+        <li><strong>The speech bubble</strong> in the corner of each section lets you send the committee feedback on that section.</li>
+      </ol>
+    </section>
+
+    <!-- ─── Where to start -->
+    <section>
+      <h2 class="text-lg font-bold text-slate-800 mb-3">Where to start</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+        <div class="bg-white border border-gray-200 rounded-lg p-4">
+          <p class="text-xs font-semibold text-teal-600 uppercase tracking-wide mb-2">Quick reads</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../documents/revised-bylaws/1.html" class="text-teal-600 hover:underline">Article 1 · Members</a> <span class="text-gray-500">— who's a member and how notices reach you</span></li>
+            <li><a href="../documents/revised-bylaws/9.html" class="text-teal-600 hover:underline">Article 9 · Amendments</a> <span class="text-gray-500">— one section, one open question</span></li>
+            <li><a href="../documents/revised-bylaws/7.html" class="text-teal-600 hover:underline">Article 7 · Accountability</a> <span class="text-gray-500">— how Directors must act</span></li>
+          </ul>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg p-4">
+          <p class="text-xs font-semibold text-teal-600 uppercase tracking-wide mb-2">Go deeper</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../documents/revised-bylaws/2.html" class="text-teal-600 hover:underline">Article 2 · Meetings and Voting</a> <span class="text-gray-500">— elections, ballots, quorum</span></li>
+            <li><a href="../documents/revised-bylaws/3.html" class="text-teal-600 hover:underline">Article 3 · Board of Directors</a> <span class="text-gray-500">— how the board works</span></li>
+          </ul>
+          <p class="text-xs text-gray-500 mt-3">These are the longest and most detailed. Take them a few sections at a time.</p>
+        </div>
+        <div class="border-2 border-amber-400 rounded-lg p-4 bg-amber-50">
+          <p class="text-xs font-semibold text-amber-800 uppercase tracking-wide mb-2">Big new ideas</p>
+          <ul class="space-y-2 text-sm">
+            <li><a href="../documents/revised-bylaws/5.html#proposal-purpose" class="text-teal-700 hover:underline">A purpose statement for each article</a></li>
+            <li><a href="../documents/revised-bylaws/4.html#proposal-officers" class="text-teal-700 hover:underline">Additional officer positions</a></li>
+            <li><a href="../documents/revised-bylaws/3.html#s3-1" class="text-teal-700 hover:underline">Three-year terms for Directors</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Words to know -->
+    <section>
+      <h2 class="text-lg font-bold text-slate-800 mb-3">Words to know</h2>
+      <dl class="bg-white border border-gray-200 rounded-lg divide-y divide-gray-100">
+        <div class="p-4"><dt class="font-semibold text-slate-800">HOA (homeowners' association)</dt><dd class="text-sm text-gray-700 mt-1">The group every lot owner belongs to. Ours is legally named Lakemoor Community Club.</dd></div>
+        <div class="p-4"><dt class="font-semibold text-slate-800">RCW (Revised Code of Washington)</dt><dd class="text-sm text-gray-700 mt-1">The book of all Washington State laws. <a href="https://app.leg.wa.gov/RCW/default.aspx?cite=64.90" target="_blank" rel="noopener" class="text-teal-600 hover:underline">RCW 64.90</a> is the new chapter for HOAs like ours, and it applies to every Washington HOA starting January 1, 2028.</dd></div>
+        <div class="p-4"><dt class="font-semibold text-slate-800">Bylaws</dt><dd class="text-sm text-gray-700 mt-1">The rules for how our HOA runs: elections, meetings, voting, and members' rights.</dd></div>
+        <div class="p-4"><dt class="font-semibold text-slate-800">Covenants (CC&amp;Rs)</dt><dd class="text-sm text-gray-700 mt-1">Promises tied to every lot, recorded with the county. They apply to every owner, now and in the future.</dd></div>
+        <div class="p-4"><dt class="font-semibold text-slate-800">Policies</dt><dd class="text-sm text-gray-700 mt-1">Day-to-day details set by the board. Easy to change.</dd></div>
+      </dl>
+    </section>
+
+    <section class="text-center pt-2">
+      <a href="../documents/revised-bylaws/" class="inline-block bg-teal-600 hover:bg-teal-700 text-white font-semibold px-6 py-3 rounded-lg transition">Start reading the revised bylaws →</a>
+    </section>
+
+  </main>
+
+  <footer class="max-w-4xl mx-auto px-6 py-8 flex justify-between items-center border-t border-gray-200 mt-4">
+    <a href="../" class="text-teal-600 hover:underline text-sm">← Home</a>
+    <a href="../documents/" class="text-gray-500 hover:text-gray-700 text-sm">All Documents</a>
+    <a href="../documents/revised-bylaws/" class="text-teal-600 hover:underline text-sm">Revised Bylaws →</a>
+  </footer>
+
+  <script src="../js/source-tabs.js"></script>
+  <script src="../js/checklist.js"></script>
+  <!-- This page uses the inline example button instead of the floating one.
+       checklist.js builds its button on DOMContentLoaded, so remove it in a listener registered after that one. -->
+  <script>document.addEventListener('DOMContentLoaded', () => document.getElementById('checklist-toggle')?.remove());</script>
+</body>
+</html>
